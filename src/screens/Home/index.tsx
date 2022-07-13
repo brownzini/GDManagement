@@ -87,3 +87,21 @@ export default function Home (){
  )
 }
 
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: '#B75AFF',
+    borderRadius: 8,
+    paddingVertical: 45,
+    paddingHorizontal: 25,
+    width: '100%',
+    marginVertical: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#fff',
+  },
+  elevation: {
+    elevation: 10,
+    shadowColor: 'black',
+  },
+});
