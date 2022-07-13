@@ -23,7 +23,8 @@ export default {
   
       GRADIENT_SIGNIN: ['#8E2DE2', '#4A00E0'],
       GRADIENT_HOME: ['#5E238D', '#6C0AB9'],
-      GRADIENT_PRODUCT: ['#6C0AB9', '#5E238D'],
+      GRADIENT_PRODUCT_HEADER: ['#6C0AB9', '#5E238D'],
+      GRADIENT_PRODUCT_CARD: ['#6C0AB9', '#5E238D'],
     },
     FONTS: {
       TITLE: 'Lato_400Regular',

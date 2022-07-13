@@ -8,7 +8,7 @@ export const Container = styled.View`
 `;
 
 export const Header = styled(LinearGradient).attrs(({ theme }) => ({
-  colors: theme.COLORS.GRADIENT_PRODUCT,
+  colors: theme.COLORS.GRADIENT_PRODUCT_HEADER,
   start: { x: 0, y: 1 },
   end: { x: 0.5, y: 0.5 }
 }))`
@@ -33,3 +33,5 @@ export const HeaderText = styled.Text`
     font-family: ${({ theme }) => theme.FONTS.TITLE};
     color: ${({ theme }) => theme.COLORS.TITLE};
 `;
+
+export const CardHeader = styled.View``;

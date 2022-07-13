@@ -2,6 +2,7 @@ import React from 'react';
 import BackButton from '../../../components/BackButton';
 
 import { 
+  CardHeader,
   Container, 
   Header,
   HeaderText,
@@ -16,8 +17,11 @@ export default function ListProducts (){
         <BackButton 
           color="#fff"
         />
-        <HeaderText> teste kkkk </HeaderText>
+        <HeaderText> Products </HeaderText>
       </HeaderTitle>
+      <CardHeader>
+      
+      </CardHeader>
     </Header>
    </Container>
  )
