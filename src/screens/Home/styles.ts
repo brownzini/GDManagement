@@ -6,6 +6,10 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { Foundation } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
+interface Props extends RectButtonProps {
+    children: React.ReactNode;
+}
 
 export const Container = styled(LinearGradient).attrs(({ theme }) => ({
   colors: theme.COLORS.GRADIENT_HOME,
@@ -93,9 +97,29 @@ export const ReviewTitle = styled.Text`
     margin-top: ${RFValue(30)}px;
 `;
 
+export const ButtonContent = styled(RectButton)<Props>`
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+`;
+
 export const ReviewContent = styled.View`
     width:100%;
     height: ${RFValue(50)}px;
+`;
+
+export const ReviewContent2 = styled.View`
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+`;
+
+export const ButtonContent2 = styled(RectButton)<Props>`
+    width: ${RFValue(165)}px;
+    height: ${RFValue(70)}px;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const ReviewBody = styled.View`
@@ -116,11 +140,12 @@ export const ReviewFirst = styled.View`
     margin-left: 5px;
     margin-bottom:5px;
     flex-direction: column;
-    justify-content: center;
 `;
 
 export const ReviewWrapper = styled.View`
+  justify-content: center;
   align-items: center;
+  padding: 18px 0px;
 `;
 
 export const ReviewMoney = styled.Text`
@@ -155,6 +180,13 @@ export const ReviewStatisticsTitle = styled.Text`
     font-size: ${RFValue(16)}px;
     font-family: ${({ theme }) => theme.FONTS.TEXT};
     color: ${({ theme }) => theme.COLORS.PRIMARY_50};
+`;
+
+export const ButtonContent3 = styled(RectButton)<Props>`
+    width: ${RFValue(150)}px;
+    height: ${RFValue(60)}px;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const ReviewThird = styled.View`

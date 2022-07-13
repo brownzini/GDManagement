@@ -39,6 +39,10 @@ import {
   LastProcutsBodyContent,
   Brand,
   Photo,
+  ButtonContent,
+  ButtonContent2,
+  ReviewContent2,
+  ButtonContent3,
 } from './styles';
 
 import { DATA } from '../../utils/Categories';
@@ -87,40 +91,50 @@ export default function Home (){
 
      <ReviewContent>
         <ReviewBody>
-          <ReviewFirst>           
-            <ReviewWrapper>
-              <ReviewMoneyTitle> Total </ReviewMoneyTitle>
-              <ReviewMoney> $10.52 </ReviewMoney>
-            </ReviewWrapper>
+          
+          <ReviewFirst>
+             <ReviewWrapper>
+                <ReviewMoneyTitle> Total </ReviewMoneyTitle>
+                <ReviewMoney> $10.52 </ReviewMoney>
+             </ReviewWrapper>
           </ReviewFirst>
-
+          
           <ReviewSecond>
-            <Icon name="graph-bar" /> 
-            <ReviewStatisticsTitle> 
-              {''} Statistics 
-            </ReviewStatisticsTitle>
+           <ButtonContent2>
+            <ReviewContent2>
+             <Icon name="graph-bar" /> 
+             <ReviewStatisticsTitle> 
+               {''} Statistics 
+             </ReviewStatisticsTitle>
+            </ReviewContent2>
+           </ButtonContent2>
           </ReviewSecond>
 
           <ReviewThird>
+           <ButtonContent3>
             <ReviewWrapperSettings>
              <Icon3 name="gear" />
              <ReviewSettingsTitle>
                Settings
              </ReviewSettingsTitle>
             </ReviewWrapperSettings>
+           </ButtonContent3>
           </ReviewThird>
 
           <ReviewFourth>
-           <ReviewWrapperProducts>
+           <ButtonContent>
+            <ReviewWrapperProducts>
              <Icon2 name="inventory" />
              <ReviewProductsTitle> 
                Products 
              </ReviewProductsTitle>
-           </ReviewWrapperProducts>
-           <ReviewProductsTotal>
+            </ReviewWrapperProducts>
+            <ReviewProductsTotal>
                15
-           </ReviewProductsTotal>
+            </ReviewProductsTotal>
+           </ButtonContent>
           </ReviewFourth>
+
         </ReviewBody>
      </ReviewContent>
    </Container>
