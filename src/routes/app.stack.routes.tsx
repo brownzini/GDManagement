@@ -7,7 +7,6 @@ import ListProducts from '../screens/Products/ListProducts';
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export function AppStackRoutes() {
-
     return (
         <Navigator
             screenOptions={{

@@ -15,7 +15,7 @@ import {
 } from "./styles";
 
 export function SignIn() {
-  const navigation = useNavigation<any>()
+  const navigation = useNavigation<any>();
   
   function next() {
     navigation.navigate('Splash');

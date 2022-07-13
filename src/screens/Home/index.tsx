@@ -46,8 +46,16 @@ import {
 } from './styles';
 
 import { DATA } from '../../utils/Categories';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home (){
+
+ const navigation = useNavigation<any>();
+
+ function next() {
+   navigation.navigate('ListProducts');
+ }
+
  const renderItem = ({ item }) => (
   <Item style={{
     elevation: 2,
@@ -56,8 +64,9 @@ export default function Home (){
     <Brand source={item.img} />
   </Item>
  );
+
  return (
-   <Container>
+  <Container>
     
      <Header>
       <HeaderContent>
@@ -122,7 +131,9 @@ export default function Home (){
           </ReviewThird>
 
           <ReviewFourth>
-           <ButtonContent>
+           <ButtonContent 
+            onPress={() => navigation.navigate('ListProducts')}
+           >
             <ReviewWrapperProducts>
              <Icon2 name="inventory" />
              <ReviewProductsTitle> 

@@ -7,7 +7,7 @@ import { AppStackRoutes } from './app.stack.routes'
 import HomeSvg from '../assets/home.svg'
 import { SignIn } from '../screens/SignIn';
 
-const { Navigator, Screen } = createBottomTabNavigator()
+const { Navigator, Screen } = createBottomTabNavigator();
 
 export function AppTabRoutes() {
     return (
@@ -23,7 +23,6 @@ export function AppTabRoutes() {
                 backgroundColor: '#fff',
             }
           }}
-          initialRouteName="Inicio"
         >
         <Screen
           name='Inicio'
