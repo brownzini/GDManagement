@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { FlatList, StyleSheet } from 'react-native';
 import BackButton from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 
@@ -13,12 +13,44 @@ import {
   HeaderTitle,
   Image,
   ImageArea,
+  ProductsCardContent,
   WrapperButton, 
 } from './styles';
 
 import products from '../../../assets/products.png';
+import { ProductsCard, ProductsCardProps } from '../../../components/ProductsCard';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
+export interface DataListProps extends ProductsCardProps {
+  id: string;
+}
 
 export default function ListProducts (){
+ const [transactions, setTransactions] = useState<DataListProps[]>([
+  {
+    id: '1',
+    name: 'Produto 1',
+    img: 'https://picsum.photos/200/300',
+    date: '01/01/2020',
+    price: 'R$ 10,00',
+    category: 'Hamburger',
+  },
+  {
+    id: '2',
+    name: 'Produto 1',
+    img: 'https://picsum.photos/200/300',
+    date: '01/01/2020',
+    price: 'R$ 10,00',
+    category: 'Hamburger',
+  },
+  {
+    id: '3',
+    name: 'Produto 1',
+    img: 'https://picsum.photos/200/300',
+    date: '01/01/2020',
+    price: 'R$ 10,00',
+    category: 'Hamburger',
+  }
+ ]);
  return (
    <Container>
     <Header>
@@ -45,14 +77,21 @@ export default function ListProducts (){
         </ImageArea>
       </CardHeader>
     </Header>
+    <ProductsCardContent>
+      <FlatList
+        data={transactions}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => <ProductsCard data={item} />}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: getBottomSpace() }}
+      />
+    </ProductsCardContent>
    </Container>
  )
 }
 
 const styles = StyleSheet.create({
-  card: {
-    
-  },
+  card: {},
   elevation: {
     elevation: 15,
     shadowColor: 'black',

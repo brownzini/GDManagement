@@ -81,3 +81,8 @@ export const Image = styled.Image`
    transform: rotate(10deg);
 `;
 
+export const ProductsCardContent = styled.View`
+    flex: 1%;
+    padding: 0 24px;
+    margin-top: ${RFPercentage(17)}px;
+`;

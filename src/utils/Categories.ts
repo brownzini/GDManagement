@@ -41,3 +41,16 @@ export const DATA = [
       img: vehicle,
     },
 ];
+
+export function GetIconsCategory (param:string) {
+    switch (param) {
+        case 'Home Appliance': return home_appliance;
+        case 'Electronics': return electronics;
+        case 'Derivative': return derivative;
+        case 'Materials': return materials;
+        case 'Workplace Safety': return workplace_safety;
+        case 'Surveillance': return surveillance;
+        case 'Vehicle': return vehicle;
+        default: return Hamburger;
+    }
+}
