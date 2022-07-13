@@ -29,7 +29,7 @@ export function SignIn() {
           <Title>Get Started</Title>
           <Button
             title="Go"
-            type="secondary"
+            type="primary"
             enabled={true}
             onPress={next}
           />

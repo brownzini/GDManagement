@@ -8,7 +8,7 @@ export default {
       PRIMARY_50: '#FFF',
   
       SECONDARY_900: '#A737FF',
-      SECONDARY_500: '#7A6769',
+      SECONDARY_500: '#1C96EB',
       SECONDARY_400: '#93797B',
   
       SUCCESS_900: '#528F33',
@@ -24,7 +24,7 @@ export default {
       GRADIENT_SIGNIN: ['#8E2DE2', '#4A00E0'],
       GRADIENT_HOME: ['#5E238D', '#6C0AB9'],
       GRADIENT_PRODUCT_HEADER: ['#6C0AB9', '#5E238D'],
-      GRADIENT_PRODUCT_CARD: ['#6C0AB9', '#5E238D'],
+      GRADIENT_PRODUCT_CARD: ['#B75AFF', '#9A35EA'],
     },
     FONTS: {
       TITLE: 'Lato_400Regular',

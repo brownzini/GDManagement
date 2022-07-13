@@ -30,7 +30,7 @@ export function Button({
       enabled={enabled}
       {...rest}
     >
-      {isLoading ? <Load /> : <Title>{title}</Title>}
+      {isLoading ? <Load /> : <Title type={type}> {title} </Title>}
     </Container>
   );
 };
