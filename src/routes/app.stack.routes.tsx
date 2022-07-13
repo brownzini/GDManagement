@@ -2,7 +2,7 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from '../screens/Home';
-import Splash from '../screens/Splash';
+import ListProducts from '../screens/Products/ListProducts';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -19,6 +19,13 @@ export function AppStackRoutes() {
             <Screen
                 name='Home'
                 component={Home}
+                options={{
+                    gestureEnabled: false
+                }}
+            />
+            <Screen
+                name='ListProducts'
+                component={ListProducts}
                 options={{
                     gestureEnabled: false
                 }}
