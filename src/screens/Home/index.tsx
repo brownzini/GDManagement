@@ -12,12 +12,11 @@ import {
   Header,
   HeaderContent,
   ImageContent,
-  RequestContent,
   Title,
   SubTitle,
-  RequestBody,
+  LastProcutsBody,
   Item,
-  RequestBodyContent,
+  LastProcutsContent,
   ReviewContent,
   ReviewTitle,
   ReviewBody,
@@ -87,8 +86,20 @@ export default function Home (){
         </ImageContent>
       </HeaderContent> 
      </Header>
-
-
+     <LastProcutsContent>
+        <SubTitle> Last registered products </SubTitle>
+        <LastProcutsBody style={[styles.card, styles.elevation]}>
+         <LastProcutsContent>
+          <FlatList
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+          />
+         </LastProcutsContent>
+        </LastProcutsBody>  
+     </LastProcutsContent>
    </Container>
  )
 }

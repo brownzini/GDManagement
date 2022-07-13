@@ -44,7 +44,7 @@ export const ImageContent = styled.View`
     border-radius: 10px;
 `;
 
-export const RequestContent = styled.View`
+export const LastProcutsContent = styled.View`
     margin-top: 10%;
 `;
 
@@ -54,7 +54,7 @@ export const SubTitle = styled.Text`
     color: ${({ theme }) => theme.COLORS.PRIMARY_50};
 `;
 
-export const RequestBody = styled.View`
+export const LastProcutsBody = styled.View`
     height: ${RFValue(100)}px;
     margin-top:2.5%;
     border-radius:20px;
@@ -67,7 +67,7 @@ export const RequestBody = styled.View`
     align-items: center;
 `;
 
-export const RequestBodyContent = styled.View`
+export const LastProcutsBodyContent = styled.View`
     flex-direction: row;
 `;
 
