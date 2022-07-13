@@ -14,9 +14,7 @@ import {
   ImageContent,
   Title,
   SubTitle,
-  LastProcutsBody,
   Item,
-  LastProcutsContent,
   ReviewContent,
   ReviewTitle,
   ReviewBody,
@@ -36,13 +34,15 @@ import {
   ReviewWrapperSettings,
   ReviewSettingsTitle,
   Icon3,
-  LastProcutsBodyContent,
   Brand,
   Photo,
   ButtonContent,
   ButtonContent2,
   ReviewContent2,
   ButtonContent3,
+  LastProductsContent,
+  LastProductsBody,
+  LastProductsBodyContent,
 } from './styles';
 
 import { DATA } from '../../utils/Categories';
@@ -72,10 +72,10 @@ export default function Home (){
       </HeaderContent> 
      </Header>
 
-     <LastProcutsContent>
+     <LastProductsContent>
         <SubTitle> Last registered products </SubTitle>
-        <LastProcutsBody style={[styles.card, styles.elevation]}>
-         <LastProcutsBodyContent>
+        <LastProductsBody style={[styles.card, styles.elevation]}>
+         <LastProductsBodyContent>
           <FlatList
             data={DATA}
             renderItem={renderItem}
@@ -83,9 +83,9 @@ export default function Home (){
             horizontal={true}
             showsHorizontalScrollIndicator={false}
           />
-         </LastProcutsBodyContent>
-        </LastProcutsBody>  
-     </LastProcutsContent>
+         </LastProductsBodyContent>
+        </LastProductsBody>  
+     </LastProductsContent>
 
      <ReviewTitle> Weekly Review </ReviewTitle>
 

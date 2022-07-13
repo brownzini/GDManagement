@@ -52,7 +52,7 @@ export const Photo = styled.Image`
     border-radius: 5px;
 `;
 
-export const LastProcutsContent = styled.View`
+export const LastProductsContent = styled.View`
     margin-top: 10%;
 `;
 
@@ -62,7 +62,7 @@ export const SubTitle = styled.Text`
     color: ${({ theme }) => theme.COLORS.PRIMARY_50};
 `;
 
-export const LastProcutsBody = styled.View`
+export const LastProductsBody = styled.View`
     height: ${RFValue(100)}px;
     margin-top:2.5%;
     border-radius:20px;
@@ -75,7 +75,7 @@ export const LastProcutsBody = styled.View`
     align-items: center;
 `;
 
-export const LastProcutsBodyContent = styled.View`
+export const LastProductsBodyContent = styled.View`
     flex-direction: row;
 `;
 
