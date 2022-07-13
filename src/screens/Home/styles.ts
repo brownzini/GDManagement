@@ -58,7 +58,7 @@ export const LastProcutsBody = styled.View`
     height: ${RFValue(100)}px;
     margin-top:2.5%;
     border-radius:20px;
-    padding: 20px 0px;
+    padding: 20px 10px;
     border-bottom-width:5px;
     border-left-width:2px;
     border-right-width:2px;
@@ -72,12 +72,14 @@ export const LastProcutsBodyContent = styled.View`
 `;
 
 export const Item = styled.View`
-    background-color:red;
+    background-color:white;
     width:50px;
     height: ${RFValue(50)}px;
     border-radius:100px;
     margin:10px;
     margin-top:0px;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const ReviewTitle = styled.Text`
@@ -220,4 +222,10 @@ export const Icon2 = styled(MaterialIcons)`
 export const Icon3 = styled(EvilIcons)`
     font-size: ${RFValue(20)}px;
     color: ${({ theme }) => theme.COLORS.SHAPE};
+`;
+
+export const Brand = styled.Image.attrs({
+    resizeMode: 'contain'
+  })`
+    margin-top: 0px;
 `;

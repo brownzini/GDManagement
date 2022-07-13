@@ -7,6 +7,8 @@ import {
   Text, 
 } from 'react-native';
 
+import Hamburger from '../../assets/hamburger.png';
+
 import { 
   Container, 
   Header,
@@ -36,49 +38,57 @@ import {
   ReviewWrapperSettings,
   ReviewSettingsTitle,
   Icon3,
+  LastProcutsBodyContent,
+  Brand,
 } from './styles';
 
 const DATA = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Faa',
+    id: '1',
+    title: Hamburger,
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Saas',
+    id: '2',
+    title: Hamburger,
   },
   {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Taaa',
+    id: '3',
+    title: Hamburger,
   },
   {
-    id: '58694a0f-3da1-471f-bd96-145571e29d772',
-    title: 'Teeee',
+    id: '4',
+    title: Hamburger,
   },
   {
-    id: 'bd7acbea3-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Faa',
+    id: '5',
+    title: Hamburger,
   },
   {
-    id: '3ac68af2c-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Saas',
+    id: '6',
+    title: Hamburger,
   },
   {
-    id: '58694a01f-3da1-471f-bd96-145571e29d72',
-    title: 'Taaa',
+    id: '7',
+    title: Hamburger,
   },
   {
-    id: '58694a00f-3da1-471f-bd96-145571e29d772',
-    title: 'Teeee',
+    id: '8',
+    title: Hamburger,
   },
 ];
 
 export default function Home (){
  const renderItem = ({ item }) => (
-  <Item></Item>
+  <Item style={{
+    elevation: 2,
+    shadowColor: 'black',
+  }}>
+    <Brand source={item.title} />
+  </Item>
  );
  return (
    <Container>
+    
      <Header>
       <HeaderContent>
         <Title> 👋Hi{'\n'} Gabriel David </Title>
@@ -86,10 +96,11 @@ export default function Home (){
         </ImageContent>
       </HeaderContent> 
      </Header>
+
      <LastProcutsContent>
         <SubTitle> Last registered products </SubTitle>
         <LastProcutsBody style={[styles.card, styles.elevation]}>
-         <LastProcutsContent>
+         <LastProcutsBodyContent>
           <FlatList
             data={DATA}
             renderItem={renderItem}
@@ -97,9 +108,52 @@ export default function Home (){
             horizontal={true}
             showsHorizontalScrollIndicator={false}
           />
-         </LastProcutsContent>
+         </LastProcutsBodyContent>
         </LastProcutsBody>  
      </LastProcutsContent>
+
+     <ReviewTitle> Weekly Review </ReviewTitle>
+
+     <ReviewContent>
+        <ReviewBody>
+
+          <ReviewFirst>           
+            <ReviewWrapper>
+              <ReviewMoneyTitle> Total </ReviewMoneyTitle>
+              <ReviewMoney> $10.52 </ReviewMoney>
+            </ReviewWrapper>
+          </ReviewFirst>
+
+          <ReviewSecond>
+            <Icon name="graph-bar" /> 
+            <ReviewStatisticsTitle> 
+              {''} Statistics 
+            </ReviewStatisticsTitle>
+          </ReviewSecond>
+
+          <ReviewThird>
+            <ReviewWrapperSettings>
+             <Icon3 name="gear" />
+             <ReviewSettingsTitle>
+               Settings
+             </ReviewSettingsTitle>
+            </ReviewWrapperSettings>
+          </ReviewThird>
+
+          <ReviewFourth>
+           <ReviewWrapperProducts>
+             <Icon2 name="inventory" />
+             <ReviewProductsTitle> 
+               Products 
+             </ReviewProductsTitle>
+           </ReviewWrapperProducts>
+           <ReviewProductsTotal>
+               15
+           </ReviewProductsTotal>
+          </ReviewFourth>
+
+        </ReviewBody>
+     </ReviewContent>
    </Container>
  )
 }
