@@ -1,3 +1,1 @@
-"# autonomusApp" 
-"# GDManagement" 
 "# GDManagement" 
