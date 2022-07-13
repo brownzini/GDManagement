@@ -38,10 +38,14 @@ export const Title = styled.Text`
 `;
 
 export const ImageContent = styled.View` 
-    background-color: red;
-    height:100%;
-    width: 20%;
-    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const Photo = styled.Image`
+    width: ${RFValue(50)}px;
+    height: ${RFValue(50)}px;
+    border-radius: 5px;
 `;
 
 export const LastProcutsContent = styled.View`

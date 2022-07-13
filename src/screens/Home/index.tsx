@@ -2,19 +2,10 @@ import React from 'react';
 
 import { 
   FlatList, 
+  Image, 
   StatusBar, 
   StyleSheet,
-  Text, 
 } from 'react-native';
-
-import Hamburger from '../../assets/hamburger.png';
-import home_appliance from '../../assets/home_appliance.png';
-import electronics from '../../assets/electronics.png';
-import derivative from '../../assets/derivative.png';
-import materials from '../../assets/materials.png';
-import workplace_safety from '../../assets/workplace_safety.png';
-import surveillance from '../../assets/surveillance.png';
-import vehicle from '../../assets/vehicle.png';
 
 import { 
   Container, 
@@ -47,42 +38,10 @@ import {
   Icon3,
   LastProcutsBodyContent,
   Brand,
+  Photo,
 } from './styles';
 
-const DATA = [
-  {
-    id: '1',
-    title: Hamburger,
-  },
-  {
-    id: '2',
-    title: home_appliance,
-  },
-  {
-    id: '3',
-    title: electronics,
-  },
-  {
-    id: '4',
-    title: derivative,
-  },
-  {
-    id: '5',
-    title: materials,
-  },
-  {
-    id: '6',
-    title: workplace_safety,
-  },
-  {
-    id: '7',
-    title: surveillance,
-  },
-  {
-    id: '8',
-    title: vehicle,
-  },
-];
+import { DATA } from '../../utils/Categories';
 
 export default function Home (){
  const renderItem = ({ item }) => (
@@ -90,7 +49,7 @@ export default function Home (){
     elevation: 2,
     shadowColor: 'black',
   }}>
-    <Brand source={item.title} />
+    <Brand source={item.img} />
   </Item>
  );
  return (
@@ -100,6 +59,11 @@ export default function Home (){
       <HeaderContent>
         <Title> 👋Hi{'\n'} Gabriel David </Title>
         <ImageContent>
+          <Photo 
+            source={{ 
+              uri: 'https://avatars.githubusercontent.com/GabrielDavid1' 
+            }} 
+          />
         </ImageContent>
       </HeaderContent> 
      </Header>
@@ -123,7 +87,6 @@ export default function Home (){
 
      <ReviewContent>
         <ReviewBody>
-
           <ReviewFirst>           
             <ReviewWrapper>
               <ReviewMoneyTitle> Total </ReviewMoneyTitle>
@@ -158,7 +121,6 @@ export default function Home (){
                15
            </ReviewProductsTotal>
           </ReviewFourth>
-
         </ReviewBody>
      </ReviewContent>
    </Container>
