@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "184640740179",
+    "project_id": "autonomousapp-5dc9d",
+    "storage_bucket": "autonomousapp-5dc9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184640740179:android:b5b6e7362f532a5d535fa6",
+        "android_client_info": {
+          "package_name": "com.autonomousapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184640740179-k9knba082bb6upvftqk5hhm09oolhcnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQK7Z7sHDQKzAWb8HsKWz_TNuknkHa4II"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184640740179-k9knba082bb6upvftqk5hhm09oolhcnb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "autonomousApp",
+    "slug": "autonomousApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "splash": {
+      "image": "./src/assets/principal.png",
+      "backgroundColor": "#1B1B1F"
+    }
+  },
+  "name": "autonomousapp"
+}
