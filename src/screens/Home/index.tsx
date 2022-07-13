@@ -8,6 +8,13 @@ import {
 } from 'react-native';
 
 import Hamburger from '../../assets/hamburger.png';
+import home_appliance from '../../assets/home_appliance.png';
+import electronics from '../../assets/electronics.png';
+import derivative from '../../assets/derivative.png';
+import materials from '../../assets/materials.png';
+import workplace_safety from '../../assets/workplace_safety.png';
+import surveillance from '../../assets/surveillance.png';
+import vehicle from '../../assets/vehicle.png';
 
 import { 
   Container, 
@@ -49,31 +56,31 @@ const DATA = [
   },
   {
     id: '2',
-    title: Hamburger,
+    title: home_appliance,
   },
   {
     id: '3',
-    title: Hamburger,
+    title: electronics,
   },
   {
     id: '4',
-    title: Hamburger,
+    title: derivative,
   },
   {
     id: '5',
-    title: Hamburger,
+    title: materials,
   },
   {
     id: '6',
-    title: Hamburger,
+    title: workplace_safety,
   },
   {
     id: '7',
-    title: Hamburger,
+    title: surveillance,
   },
   {
     id: '8',
-    title: Hamburger,
+    title: vehicle,
   },
 ];
 

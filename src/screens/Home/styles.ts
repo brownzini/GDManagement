@@ -72,7 +72,7 @@ export const LastProcutsBodyContent = styled.View`
 `;
 
 export const Item = styled.View`
-    background-color:white;
+    background-color:${({ theme }) => theme.COLORS.TITLE};
     width:50px;
     height: ${RFValue(50)}px;
     border-radius:100px;
