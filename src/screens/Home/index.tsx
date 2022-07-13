@@ -80,7 +80,13 @@ export default function Home (){
  );
  return (
    <Container>
-
+     <Header>
+      <HeaderContent>
+        <Title> 👋Hi{'\n'} Gabriel David </Title>
+        <ImageContent>
+        </ImageContent>
+      </HeaderContent> 
+     </Header>
 
 
    </Container>
