@@ -20,7 +20,13 @@ export const Header = styled(LinearGradient).attrs(({ theme }) => ({
     padding-top: ${Platform.OS === 'ios' ? 0 : 26}px;
 `;
 
-export const HeaderTitle = styled.View``;
+export const HeaderTitle = styled.View`
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    padding: 50px 30px;
+    justify-content: space-between;
+`;
 
 export const HeaderText = styled.Text`
     font-size: ${RFValue(16)}px;

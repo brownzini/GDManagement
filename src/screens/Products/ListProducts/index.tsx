@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import BackButton from '../../../components/BackButton';
 
 import { 
   Container, 
@@ -13,6 +13,9 @@ export default function ListProducts (){
    <Container>
     <Header>
       <HeaderTitle>
+        <BackButton 
+          color="#fff"
+        />
         <HeaderText> teste kkkk </HeaderText>
       </HeaderTitle>
     </Header>
