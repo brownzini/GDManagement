@@ -29,7 +29,6 @@ export default function ListProducts (){
   {
     id: '1',
     name: 'Produto 1',
-    img: 'https://picsum.photos/200/300',
     date: '01/01/2020',
     price: 'R$ 10,00',
     category: 'Hamburger',
@@ -37,7 +36,6 @@ export default function ListProducts (){
   {
     id: '2',
     name: 'Produto 1',
-    img: 'https://picsum.photos/200/300',
     date: '01/01/2020',
     price: 'R$ 10,00',
     category: 'Hamburger',
@@ -45,7 +43,6 @@ export default function ListProducts (){
   {
     id: '3',
     name: 'Produto 1',
-    img: 'https://picsum.photos/200/300',
     date: '01/01/2020',
     price: 'R$ 10,00',
     category: 'Hamburger',
