@@ -35,7 +35,6 @@ export function ProductsCard({ data }: Props) {
     return (
       <Container>
         <ContentHeader>
-
           <NameContainer>
             <Title> {data.name} </Title>
           </NameContainer>
@@ -50,16 +49,13 @@ export function ProductsCard({ data }: Props) {
             </ButtonContentDelete>
           </Actions>
         </ContentHeader>
-
         <Content>
           <PriceContainer> {data.price} </PriceContainer>
           <Image source={GetIconsCategory(data.category)} />
         </Content>
-
         <DateContainer>
           <Date> Created At: {data.date} </Date>
         </DateContainer>
-
       </Container>
     )
 }

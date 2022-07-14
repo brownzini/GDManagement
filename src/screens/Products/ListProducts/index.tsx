@@ -20,6 +20,7 @@ import {
 import products from '../../../assets/products.png';
 import { ProductsCard, ProductsCardProps } from '../../../components/ProductsCard';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
+import { useNavigation } from '@react-navigation/native';
 export interface DataListProps extends ProductsCardProps {
   id: string;
 }
@@ -28,9 +29,9 @@ export default function ListProducts (){
  const [transactions, setTransactions] = useState<DataListProps[]>([
   {
     id: '1',
-    name: 'Produto 1',
+    name: 'Alimentos',
     date: '01/01/2020',
-    price: 'R$ 10,00',
+    price: '$ 10,00',
     category: 'Hamburger',
   },
   {
@@ -48,12 +49,14 @@ export default function ListProducts (){
     category: 'Hamburger',
   }
  ]);
+ const navigation = useNavigation<any>();
  return (
    <Container>
     <Header>
       <HeaderTitle>
         <BackButton 
           color="#fff"
+          onPress={() => navigation.goBack()}
         />
         <HeaderText> Products </HeaderText>
       </HeaderTitle>

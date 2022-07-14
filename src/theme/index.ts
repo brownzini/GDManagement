@@ -15,8 +15,8 @@ export default {
       SUCCESS_50: '#F7FFF9',
   
       ALERT_900: '#B27F00',
-      ALERT_800: '#C5941A',
-      ALERT_50: '#F3EFE5',
+      ALERT_800: '#646262',
+      ALERT_50: '#CF1010',
   
       SHAPE: '#DCDCDC',
       TITLE: '#FFF',

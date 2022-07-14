@@ -79,10 +79,10 @@ export const ButtonContentDelete = styled(RectButton)<Props>`
 
 export const EditIcon = styled(MaterialIcons)`
     font-size: ${RFValue(20)}px;
-    color: ${({ theme }) => theme.COLORS.SHAPE};
+    color: ${({ theme }) => theme.COLORS.ALERT_800};
 `;
 
 export const DeleteIcon = styled(MaterialCommunityIcons)`
     font-size: ${RFValue(20)}px;
-    color: ${({ theme }) => theme.COLORS.SHAPE};
+    color: ${({ theme }) => theme.COLORS.ALERT_50};
 `;

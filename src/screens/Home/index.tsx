@@ -52,10 +52,6 @@ export default function Home (){
 
  const navigation = useNavigation<any>();
 
- function next() {
-   navigation.navigate('ListProducts');
- }
-
  const renderItem = ({ item }) => (
   <Item style={{
     elevation: 2,
