@@ -6,6 +6,8 @@ import {
 } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
+import { AntDesign } from '@expo/vector-icons';
+
 export const Container = styled.View`
   flex: 1;
 `;
@@ -52,15 +54,20 @@ export const CardHeader = styled.View`
 export const HeaderLabel = styled.Text`
     font-size: ${RFValue(16)}px;
     font-family: ${({ theme }) => theme.FONTS.TEXT};
+    margin-bottom: 5px;
 `;
 
 export const ContentArea = styled.View`
   flex: 1;
-  max-width:50%;
-  height:80%;
+  padding: 0px 10px;
   flex-direction: column;
-  margin-left: ${RFPercentage(2)}px;
   align-items: center;
+`;
+
+export const ContentWrapper = styled.View`
+  flex: 1;
+  width: 100%;
+  padding: 50px 10px;
 `;
 
 export const ContentAreaTitle = styled.Text`
@@ -91,3 +98,27 @@ export const ProductsCardContent = styled.View`
     padding: 0 24px;
     margin-top: ${RFPercentage(17)}px;
 `;
+
+export const WrapperContent = styled.View`
+    flex: 1;
+`;
+
+export const SelectContent = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 10px;
+    border-bottom-width: 1px;
+    border-bottom-color: ${({ theme }) => theme.COLORS.SHAPE};
+    align-items: center;
+`;
+
+export const Icon = styled(AntDesign)`
+    font-size: ${RFValue(20)}px;
+    color: ${({ theme }) => theme.COLORS.SHAPE};
+`;
+
+export const Field = styled.View`
+  margin-bottom: ${RFPercentage(2.5)}px;
+`;
+
+export const ButtonSelect = styled.TouchableOpacity``;

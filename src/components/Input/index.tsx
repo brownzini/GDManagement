@@ -3,6 +3,9 @@ import { TextInputProps } from 'react-native';
 
 import { 
     Container, 
+    Content, 
+    IconName, 
+    IconPrice, 
     TypeProps 
 } from './styles';
 
@@ -11,5 +14,12 @@ type Props = TextInputProps & {
 }
 
 export function Input({ type = 'primary', ...rest }: Props) {
-  return <Container type={type} {...rest} />
+  return (
+    <Content>
+     <Container type={type} {...rest} />
+     {(type === 'primary')  
+            ? ( <IconName name="drive-file-rename-outline" /> )
+            : ( <IconPrice name="pricetags-outline" /> )}
+    </Content>
+  )
 }
