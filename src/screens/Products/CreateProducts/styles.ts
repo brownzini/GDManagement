@@ -1,7 +1,10 @@
-import { Platform } from 'react-native';
-import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Platform } from 'react-native';
+import { 
+  RFPercentage, 
+  RFValue 
+} from 'react-native-responsive-fontsize';
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
@@ -24,7 +27,7 @@ export const HeaderTitle = styled.View`
     flex: 1;
     flex-direction: row;
     align-items: center;
-    padding: 50px 30px;
+    padding: 50px 15px;
     justify-content: space-between;
 `;
 
@@ -34,19 +37,21 @@ export const HeaderText = styled.Text`
     color: ${({ theme }) => theme.COLORS.TITLE};
 `;
 
-export const CardHeader = styled(LinearGradient).attrs(({ theme }) => ({
-  colors: theme.COLORS.GRADIENT_PRODUCT_CARD,
-  start: { x: 0, y: 0.5 },
-  end: { x: 0, y: 1 }
-}))`
-  width: 80%;
-  height: ${RFPercentage(24)}px;
-  margin-top: ${RFPercentage(25)}px;
-  border-radius: ${RFPercentage(2)}px;
-  position: absolute;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: row;
+export const CardHeader = styled.View`
+    background-color: ${({ theme }) => theme.COLORS.TITLE};
+    width: 90%;
+    height: ${RFPercentage(65)}px;
+    margin-top: ${RFPercentage(25)}px;
+    border-radius: ${RFPercentage(1)}px;
+    position: absolute;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+`;
+
+export const HeaderLabel = styled.Text`
+    font-size: ${RFValue(16)}px;
+    font-family: ${({ theme }) => theme.FONTS.TEXT};
 `;
 
 export const ContentArea = styled.View`
@@ -85,8 +90,4 @@ export const ProductsCardContent = styled.View`
     flex: 1%;
     padding: 0 24px;
     margin-top: ${RFPercentage(17)}px;
-`;
-
-export const ButtonBack = styled.TouchableOpacity`
-    width: ${RFPercentage(20)}px;
 `;

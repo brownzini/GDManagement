@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { FlatList, StyleSheet } from 'react-native';
-import BackButton from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 
 import { 
+  ButtonBack,
   CardHeader,
   Container, 
   ContentArea, 
@@ -21,6 +21,7 @@ import products from '../../../assets/products.png';
 import { ProductsCard, ProductsCardProps } from '../../../components/ProductsCard';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { useNavigation } from '@react-navigation/native';
+import { MaterialIcons } from '@expo/vector-icons';
 export interface DataListProps extends ProductsCardProps {
   id: string;
 }
@@ -54,11 +55,14 @@ export default function ListProducts (){
    <Container>
     <Header>
       <HeaderTitle>
-        <BackButton 
-          color="#fff"
-          onPress={() => navigation.goBack()}
-        />
-        <HeaderText> Products </HeaderText>
+        <ButtonBack onPress={() => navigation.goBack()}>
+          <MaterialIcons
+            name="chevron-left"
+            size={24}
+            color="#fff"
+          />
+        </ButtonBack>
+        <HeaderText> Products List </HeaderText>
       </HeaderTitle>
       <CardHeader style={[styles.card, styles.elevation]}>
         <ContentArea>
@@ -69,6 +73,7 @@ export default function ListProducts (){
             <Button
               title="Create"
               type="secondary"
+              onPress={() => navigation.navigate('CreateProducts')}
             />
           </WrapperButton>
         </ContentArea>
