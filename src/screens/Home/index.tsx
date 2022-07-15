@@ -121,7 +121,7 @@ export default function Home (){
              <ReviewWrapper>
                 <ReviewMoneyTitle> Total </ReviewMoneyTitle>
                 <ReviewMoney> 
-                  $ { totalValueResult.toLocaleString('en-US') } 
+                  $ { totalValueResult.toFixed(2) } 
                 </ReviewMoney>
              </ReviewWrapper>
           </ReviewFirst>
@@ -159,7 +159,7 @@ export default function Home (){
              </ReviewProductsTitle>
             </ReviewWrapperProducts>
             <ReviewProductsTotal>
-               15
+               {products.length}
             </ReviewProductsTotal>
            </ButtonContent>
           </ReviewFourth>

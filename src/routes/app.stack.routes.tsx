@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../screens/Home';
 import ListProducts from '../screens/Products/ListProducts';
 import CreateProducts from '../screens/Products/CreateProducts';
-import { CategorySelect } from '../screens/Products/CategorySelect';
+import UpdateProducts from '../screens/Products/UpdateProducts';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -24,7 +24,14 @@ export function AppStackRoutes() {
                 gestureEnabled: false,
             }}
          />
-        <Screen
+         <Screen
+            name='ListProducts'
+            component={ListProducts}
+            options={{
+                gestureEnabled: false,
+            }}
+         />
+         <Screen
             name='CreateProducts'
             component={CreateProducts}
             options={{
@@ -32,8 +39,8 @@ export function AppStackRoutes() {
             }}
          />
          <Screen
-            name='ListProducts'
-            component={ListProducts}
+            name='UpdateProducts'
+            component={UpdateProducts}
             options={{
                 gestureEnabled: false,
             }}

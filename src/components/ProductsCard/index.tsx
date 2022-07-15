@@ -19,6 +19,7 @@ import {
 } from './styles';
 
 import { GetIconsCategory } from "../../utils/Categories";
+import { useNavigation } from "@react-navigation/native";
 export interface ProductsCardProps {
   id?:string;
   category: string;
@@ -31,6 +32,7 @@ interface Props {
 }
 
 export function ProductsCard({ data }: Props) {
+    const navigation = useNavigation<any>();
     return (
       <Container>
         <ContentHeader>
@@ -39,7 +41,9 @@ export function ProductsCard({ data }: Props) {
           </NameContainer>
           <Actions>
            <EditContainer>
-            <ButtonContentEditar>
+            <ButtonContentEditar onPress={() => navigation.navigate("UpdateProducts", {
+              data: data,
+            })}>
               <EditIcon name="edit" size={20} color="#fff" />  
             </ButtonContentEditar>
            </EditContainer>

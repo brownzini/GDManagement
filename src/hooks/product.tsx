@@ -16,6 +16,7 @@ interface Product {
 interface ProductContextData {
   products: Product[];
   setProducts: (param: Product[]) => void;
+  editProduct: (data:Product) => void;
 }
 
 interface ProductProviderProps {
@@ -26,8 +27,19 @@ const ProductContext = createContext<ProductContextData>({} as ProductContextDat
 
 function ProductProvider({ children }: ProductProviderProps) {
     const [products, setProducts] = useState<Product[]>([]);
+
+    function editProduct(data:Product) {
+        const newProducts = products.map(product => {
+            if (product.id === data.id) {
+                return data
+            }
+            return product
+        })
+        setProducts(newProducts);
+    }
+
     return (
-      <ProductContext.Provider value={{ products, setProducts }} >
+      <ProductContext.Provider value={{ products, setProducts, editProduct }} >
          {children}
       </ProductContext.Provider>
     )
