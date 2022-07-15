@@ -17,6 +17,7 @@ interface ProductContextData {
   products: Product[];
   setProducts: (param: Product[]) => void;
   editProduct: (data:Product) => void;
+  deleteProduct: (id:string) => void;
 }
 
 interface ProductProviderProps {
@@ -38,8 +39,16 @@ function ProductProvider({ children }: ProductProviderProps) {
         setProducts(newProducts);
     }
 
+    function deleteProduct (id:string) {
+        setProducts(products.filter(product => product.id !== id));
+    }
+
     return (
-      <ProductContext.Provider value={{ products, setProducts, editProduct }} >
+      <ProductContext.Provider 
+        value={{ 
+          products, setProducts, 
+          editProduct, deleteProduct 
+        }}>
          {children}
       </ProductContext.Provider>
     )

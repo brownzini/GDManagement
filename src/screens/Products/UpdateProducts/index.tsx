@@ -83,7 +83,7 @@ export default function UpdateProducts (){
           const data = await AsyncStorage.getItem(dataKey);
           const currentData = data ? JSON.parse(data) : [];
 
-          //await AsyncStorage.setItem(dataKey, JSON.stringify(products));
+          await AsyncStorage.setItem(dataKey, JSON.stringify(products));
           
           setProduct_name('');
           setProduct_price('0');
