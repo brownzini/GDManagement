@@ -20,6 +20,7 @@ import {
 
 import { GetIconsCategory } from "../../utils/Categories";
 import { useNavigation } from "@react-navigation/native";
+import { useProduct } from "../../hooks/product";
 export interface ProductsCardProps {
   id?:string;
   category: string;
@@ -32,7 +33,10 @@ interface Props {
 }
 
 export function ProductsCard({ data }: Props) {
+    
     const navigation = useNavigation<any>();
+    const { deleteProduct } = useProduct();
+
     return (
       <Container>
         <ContentHeader>
@@ -47,7 +51,7 @@ export function ProductsCard({ data }: Props) {
               <EditIcon name="edit" size={20} color="#fff" />  
             </ButtonContentEditar>
            </EditContainer>
-            <ButtonContentDelete>
+            <ButtonContentDelete onPress={() => deleteProduct(data.id)}>
               <DeleteIcon name="delete" size={20} color="#fff" />  
             </ButtonContentDelete>
           </Actions>

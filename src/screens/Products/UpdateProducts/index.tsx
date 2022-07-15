@@ -42,7 +42,7 @@ export default function UpdateProducts (){
   const { params } = useRoute();
   const { data } = params as any;
   
-  const { products } = useProduct();
+  const { products,editProduct } = useProduct();
 
   const [product_name, setProduct_name] = useState<string>(data.name);
   const [product_price, setProduct_price] = useState<string>(String(data.price));
@@ -53,8 +53,6 @@ export default function UpdateProducts (){
   });
 
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
-  
-  const { editProduct } = useProduct();
 
   function handleOpenSelectCategoryModal() {
     setCategoryModalOpen(true)
@@ -65,7 +63,7 @@ export default function UpdateProducts (){
   }
 
   async function verifyFields() {
-    if (product_name === '' || Number(product_price) === 0) {
+    if (product_name === '' || Number(product_price) === 0 || ( product_name === data.name && Number(product_price) === data.price)) {
         Alert.alert('[ERROR]: Fill in all fields');
     } else {
         const newProduct = {
@@ -75,23 +73,15 @@ export default function UpdateProducts (){
           category: category.name,
           date: data.date
         }
+        editProduct(newProduct);
 
-        try {
-          editProduct(newProduct);
-
-          const dataKey = '@gofinance:transactions';
-          const data = await AsyncStorage.getItem(dataKey);
-          const currentData = data ? JSON.parse(data) : [];
-
-          await AsyncStorage.setItem(dataKey, JSON.stringify(products));
-          
+        try {  
           setProduct_name('');
           setProduct_price('0');
           setCategory({
             key: 'food',
             name: 'Food',
           });
-
           navigation.goBack();
         } catch (error) {
           Alert.alert("[ERROR]: Couldn't save the product");

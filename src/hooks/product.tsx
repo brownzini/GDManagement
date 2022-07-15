@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, {
     createContext,
     useState,
@@ -27,20 +28,25 @@ interface ProductProviderProps {
 const ProductContext = createContext<ProductContextData>({} as ProductContextData)
 
 function ProductProvider({ children }: ProductProviderProps) {
+    const dataKey = '@gofinance:transactions';
     const [products, setProducts] = useState<Product[]>([]);
 
-    function editProduct(data:Product) {
-        const newProducts = products.map(product => {
-            if (product.id === data.id) {
-                return data
-            }
-            return product
-        })
-        setProducts(newProducts);
+    async function editProduct(data:Product) {
+        const index = products.findIndex(product => product.id === data.id);
+        if (index > -1) {
+            products[index] = data;
+            setProducts([...products]);
+        }
+        await AsyncStorage.setItem(dataKey, JSON.stringify(products));
     }
 
-    function deleteProduct (id:string) {
-        setProducts(products.filter(product => product.id !== id));
+    async function deleteProduct (id:string) {
+        const index = products.findIndex(product => product.id === id);
+        if (index > -1) {
+            products.splice(index, 1);
+            setProducts([...products]);
+        }
+        await AsyncStorage.setItem(dataKey, JSON.stringify(products));
     }
 
     return (

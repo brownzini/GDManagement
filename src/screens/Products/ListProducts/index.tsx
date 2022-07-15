@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 import { Button } from '../../../components/Button';
 
