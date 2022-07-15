@@ -7,13 +7,15 @@ import { Button } from '../../../components/Button';
 import { Input } from '../../../components/Input';
 import { CategorySelect } from '../CategorySelect';
 
+import uuid from 'react-native-uuid';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { 
   Alert,
   KeyboardAvoidingView, 
   Platform,
-  Keyboard
 } from "react-native";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 import { 
   ButtonSelect,
@@ -52,11 +54,41 @@ export default function CreateProducts (){
       setCategoryModalOpen(false)
   }
 
-  function verifyFields() {
+  async function verifyFields() {
     if (product_name === '' || product_price === 0) {
         Alert.alert('[ERROR]: Fill in all fields');
     } else {
-        
+        const newProduct = {
+          id: String(uuid.v4()),
+          name: product_name,
+          price: product_price,
+          category: category.name,
+          date: new Date()
+        }
+
+        try {
+          const dataKey = '@gofinance:transactions';
+          const data = await AsyncStorage.getItem(dataKey);
+          const currentData = data ? JSON.parse(data) : [];
+
+          const dataFormatted = [
+              ...currentData,
+              newProduct
+          ];
+
+          await AsyncStorage.setItem(dataKey, JSON.stringify(dataFormatted));
+
+          setProduct_name('');
+          setProduct_price(0);
+          setCategory({
+            key: 'food',
+            name: 'Food',
+          });
+
+          navigation.goBack();
+        } catch (error) {
+          Alert.alert("[ERROR]: Couldn't save the product");
+        }
     }
   }
 
@@ -112,13 +144,12 @@ export default function CreateProducts (){
         </ContentArea>
       </CardHeader>
      </Header>
-     <Modal 
-        visible={categoryModalOpen}>
-          <CategorySelect
-            category={category}
-            setCategory={setCategory}
-            closeSelectCategory={handleCloseSelectCategoryModal}
-          />
+      <Modal visible={categoryModalOpen}>
+        <CategorySelect
+          category={category}
+          setCategory={setCategory}
+          closeSelectCategory={handleCloseSelectCategoryModal}
+        />
       </Modal>
     </KeyboardAvoidingView>
    </Container>

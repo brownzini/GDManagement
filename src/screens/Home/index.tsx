@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { 
   FlatList, 
-  Image, 
-  StatusBar, 
   StyleSheet,
 } from 'react-native';
 
@@ -45,25 +43,38 @@ import {
   LastProductsBodyContent,
 } from './styles';
 
-import { DATA } from '../../utils/Categories';
+import { GetIconsCategory } from '../../utils/Categories';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useProduct } from '../../hooks/product';
 
 export default function Home (){
-
+ const dataKey = '@gofinance:transactions';
  const navigation = useNavigation<any>();
+
+ const { products, setProducts } =  useProduct();
+
+ useEffect(() => {
+    async function loadTransactions() {
+      const data = await AsyncStorage.getItem(dataKey);
+      if (data) {
+          setProducts(JSON.parse(data));
+      }
+    }
+    loadTransactions();
+ }, [products]);
 
  const renderItem = ({ item }) => (
   <Item style={{
     elevation: 2,
     shadowColor: 'black',
   }}>
-    <Brand source={item.img} />
+    <Brand source={GetIconsCategory(item.category)} />
   </Item>
  );
 
  return (
   <Container>
-    
      <Header>
       <HeaderContent>
         <Title> 👋Hi{'\n'} Gabriel David </Title>
@@ -82,7 +93,7 @@ export default function Home (){
         <LastProductsBody style={[styles.card, styles.elevation]}>
          <LastProductsBodyContent>
           <FlatList
-            data={DATA}
+            data={products}
             renderItem={renderItem}
             keyExtractor={item => item.id}
             horizontal={true}
@@ -96,7 +107,6 @@ export default function Home (){
 
      <ReviewContent>
         <ReviewBody>
-          
           <ReviewFirst>
              <ReviewWrapper>
                 <ReviewMoneyTitle> Total </ReviewMoneyTitle>
@@ -141,7 +151,6 @@ export default function Home (){
             </ReviewProductsTotal>
            </ButtonContent>
           </ReviewFourth>
-
         </ReviewBody>
      </ReviewContent>
    </Container>
