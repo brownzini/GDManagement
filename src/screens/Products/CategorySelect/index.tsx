@@ -37,7 +37,6 @@ export function CategorySelect({
             <Header>
                 <Title>Categoria</Title>
             </Header>
-
             <FlatList
                 data={Categories}
                 style={{ flex: 1, width: '100%' }}
@@ -52,7 +51,6 @@ export function CategorySelect({
                 )}
                 ItemSeparatorComponent={() => <Separator />}
             />
-
             <Footer>
                 <Button
                     title="Selecionar"

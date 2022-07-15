@@ -8,6 +8,14 @@ import { Input } from '../../../components/Input';
 import { CategorySelect } from '../CategorySelect';
 
 import { 
+  Alert,
+  KeyboardAvoidingView, 
+  Platform,
+  Keyboard
+} from "react-native";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+
+import { 
   ButtonSelect,
   CardHeader,
   Container, 
@@ -27,7 +35,7 @@ export default function CreateProducts (){
   const navigation = useNavigation<any>();
 
   const [product_name, setProduct_name] = useState<string>('');
-  const [product_price, setProduct_price] = useState<string>('');
+  const [product_price, setProduct_price] = useState<number>(0);
   
   const [category, setCategory] = useState({
     key: 'food',
@@ -44,8 +52,17 @@ export default function CreateProducts (){
       setCategoryModalOpen(false)
   }
 
+  function verifyFields() {
+    if (product_name === '' || product_price === 0) {
+        Alert.alert('[ERROR]: Fill in all fields');
+    } else {
+        
+    }
+  }
+
   return (
-    <Container>
+   <Container>
+    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
      <Header>
       <HeaderTitle>
         <BackButton 
@@ -72,7 +89,7 @@ export default function CreateProducts (){
                 autoCorrect={false}
                 autoCapitalize="none"
                 keyboardType='numeric'
-                onChangeText={text => setProduct_price(text)}
+                onChangeText={text => setProduct_price(Number(text))}
               />
             </Field>
             <WrapperContent>
@@ -89,6 +106,7 @@ export default function CreateProducts (){
             </WrapperContent>
             <Button 
               title="Create"
+              onPress={verifyFields}
             />
           </ContentWrapper>
         </ContentArea>
@@ -102,7 +120,8 @@ export default function CreateProducts (){
             closeSelectCategory={handleCloseSelectCategoryModal}
           />
       </Modal>
-    </Container>
+    </KeyboardAvoidingView>
+   </Container>
   )
 }
 
