@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { 
   FlatList, 
@@ -53,6 +53,7 @@ export default function Home (){
  const navigation = useNavigation<any>();
 
  const { products, setProducts } =  useProduct();
+ const [totalValueResult, setTotalValueResult] = useState<number>(0);
 
  useEffect(() => {
     async function loadTransactions() {
@@ -62,6 +63,15 @@ export default function Home (){
       }
     }
     loadTransactions();
+ }, []);
+
+ useEffect(() => { 
+    let initialValue = 0;
+    let result = products.reduce(
+      (acc , actualValue) => acc + actualValue.price
+      , initialValue
+    );
+    setTotalValueResult(result);
  }, [products]);
 
  const renderItem = ({ item }) => (
@@ -110,7 +120,9 @@ export default function Home (){
           <ReviewFirst>
              <ReviewWrapper>
                 <ReviewMoneyTitle> Total </ReviewMoneyTitle>
-                <ReviewMoney> $10.52 </ReviewMoney>
+                <ReviewMoney> 
+                  $ { totalValueResult.toLocaleString('en-US') } 
+                </ReviewMoney>
              </ReviewWrapper>
           </ReviewFirst>
           

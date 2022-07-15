@@ -33,6 +33,8 @@ import {
   WrapperContent,
 } from './styles';
 
+import { useProduct } from '../../../hooks/product';
+
 export default function CreateProducts (){
   const navigation = useNavigation<any>();
 
@@ -46,6 +48,8 @@ export default function CreateProducts (){
 
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
   
+  const { setProducts } = useProduct();
+
   function handleOpenSelectCategoryModal() {
     setCategoryModalOpen(true)
   }
@@ -77,14 +81,15 @@ export default function CreateProducts (){
           ];
 
           await AsyncStorage.setItem(dataKey, JSON.stringify(dataFormatted));
-
+          setProducts(dataFormatted);
+          
           setProduct_name('');
           setProduct_price(0);
           setCategory({
             key: 'food',
             name: 'Food',
           });
-
+          
           navigation.goBack();
         } catch (error) {
           Alert.alert("[ERROR]: Couldn't save the product");

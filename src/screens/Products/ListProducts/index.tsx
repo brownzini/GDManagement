@@ -17,40 +17,21 @@ import {
   WrapperButton, 
 } from './styles';
 
-import products from '../../../assets/products.png';
+import ProductsImage from '../../../assets/products.png';
 import { ProductsCard, ProductsCardProps } from '../../../components/ProductsCard';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useProduct } from '../../../hooks/product';
 export interface DataListProps extends ProductsCardProps {
   id: string;
 }
 
 export default function ListProducts (){
- const [transactions, setTransactions] = useState<DataListProps[]>([
-  {
-    id: '1',
-    name: 'Alimentos',
-    date: '01/01/2020',
-    price: '$ 10,00',
-    category: 'Hamburger',
-  },
-  {
-    id: '2',
-    name: 'Produto 1',
-    date: '01/01/2020',
-    price: 'R$ 10,00',
-    category: 'Hamburger',
-  },
-  {
-    id: '3',
-    name: 'Produto 1',
-    date: '01/01/2020',
-    price: 'R$ 10,00',
-    category: 'Hamburger',
-  }
- ]);
+ 
  const navigation = useNavigation<any>();
+ const { products } = useProduct();
+
  return (
    <Container>
     <Header>
@@ -78,13 +59,13 @@ export default function ListProducts (){
           </WrapperButton>
         </ContentArea>
         <ImageArea>
-          <Image source={products} />
+          <Image source={ProductsImage} />
         </ImageArea>
       </CardHeader>
     </Header>
     <ProductsCardContent>
       <FlatList
-        data={transactions}
+        data={products}
         keyExtractor={item => item.id}
         renderItem={({ item }) => <ProductsCard data={item} />}
         showsVerticalScrollIndicator={false}

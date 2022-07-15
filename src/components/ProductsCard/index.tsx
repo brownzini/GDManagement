@@ -19,14 +19,13 @@ import {
 } from './styles';
 
 import { GetIconsCategory } from "../../utils/Categories";
-
 export interface ProductsCardProps {
-    name: string;
-    date: string;
-    price: string;
-    category:string;
+  id?:string;
+  category: string;
+  date: string;
+  name: string;
+  price: number;
 }
-
 interface Props {
     data: ProductsCardProps;
 }
@@ -50,11 +49,11 @@ export function ProductsCard({ data }: Props) {
           </Actions>
         </ContentHeader>
         <Content>
-          <PriceContainer> {data.price} </PriceContainer>
+          <PriceContainer> $ {data.price} </PriceContainer>
           <Image source={GetIconsCategory(data.category)} />
         </Content>
         <DateContainer>
-          <Date> Created At: {data.date} </Date>
+          <Date> Created At - {data.date} </Date>
         </DateContainer>
       </Container>
     )
