@@ -1,10 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Modal } from 'react-native';
 import BackButton from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 
 import { Input } from '../../../components/Input';
+import { CategorySelect } from '../CategorySelect';
 
 import { 
   ButtonSelect,
@@ -27,7 +28,21 @@ export default function CreateProducts (){
 
   const [product_name, setProduct_name] = useState<string>('');
   const [product_price, setProduct_price] = useState<string>('');
-  const [product_category, setProduct_category] = useState<string>('');
+  
+  const [category, setCategory] = useState({
+    key: 'food',
+    name: 'Food',
+  });
+
+  const [categoryModalOpen, setCategoryModalOpen] = useState(false);
+  
+  function handleOpenSelectCategoryModal() {
+    setCategoryModalOpen(true)
+  }
+
+  function handleCloseSelectCategoryModal() {
+      setCategoryModalOpen(false)
+  }
 
   return (
     <Container>
@@ -47,7 +62,6 @@ export default function CreateProducts (){
                 placeholder="Product Name"
                 type="primary"
                 autoCorrect={false}
-                autoCapitalize="none"
                 onChangeText={text => setProduct_name(text)}
               />
             </Field>
@@ -57,14 +71,17 @@ export default function CreateProducts (){
                 type="secondary"
                 autoCorrect={false}
                 autoCapitalize="none"
+                keyboardType='numeric'
                 onChangeText={text => setProduct_price(text)}
               />
             </Field>
             <WrapperContent>
-             <ButtonSelect>
+             <ButtonSelect 
+              onPress={handleOpenSelectCategoryModal}
+             >
              <SelectContent>
               <HeaderLabel>
-                Category
+                {category.name}
               </HeaderLabel>
               <Icon name="down" />
              </SelectContent>
@@ -77,6 +94,14 @@ export default function CreateProducts (){
         </ContentArea>
       </CardHeader>
      </Header>
+     <Modal 
+        visible={categoryModalOpen}>
+          <CategorySelect
+            category={category}
+            setCategory={setCategory}
+            closeSelectCategory={handleCloseSelectCategoryModal}
+          />
+      </Modal>
     </Container>
   )
 }

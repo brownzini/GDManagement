@@ -1,4 +1,4 @@
-import Hamburger from '../assets/hamburger.png';
+import food from '../assets/food.png';
 import home_appliance from '../assets/home_appliance.png';
 import electronics from '../assets/electronics.png';
 import derivative from '../assets/derivative.png';
@@ -10,7 +10,7 @@ import vehicle from '../assets/vehicle.png';
 export const DATA = [
     {
       id: 'Hamburger',
-      img: Hamburger,
+      img: food,
     },
     {
       id: 'Home Appliance',
@@ -51,6 +51,6 @@ export function GetIconsCategory (param:string) {
         case 'Workplace Safety': return workplace_safety;
         case 'Surveillance': return surveillance;
         case 'Vehicle': return vehicle;
-        default: return Hamburger;
+        default: return food;
     }
 }

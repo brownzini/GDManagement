@@ -12,7 +12,7 @@ type Props = {
 }
 
 export const Container = styled(TextInput).attrs<Props>(({ theme, type }) => ({
-  placeholderTextColor: '#585757'
+  placeholderTextColor: theme.SPECIFIC_COLOR.PRIMARY_900
 })) <Props>`
   width: 100%;
   background-color: transparent;
@@ -25,7 +25,7 @@ export const Container = styled(TextInput).attrs<Props>(({ theme, type }) => ({
     font-family: ${theme.FONTS.TEXT};
     border-bottom-width: 1px;
     border-bottom-color: ${({ theme }) => theme.COLORS.SHAPE};
-    color: '#585757';
+    color: ${theme.SPECIFIC_COLOR.PRIMARY_900};
   `};
 `;
 
