@@ -128,7 +128,9 @@ export default function Home (){
           </ReviewSecond>
 
           <ReviewThird>
-           <ButtonContent3>
+           <ButtonContent3 
+            onPress={() => navigation.navigate('Settings')}
+           >
             <ReviewWrapperSettings>
              <Icon3 name="gear" />
              <ReviewSettingsTitle>

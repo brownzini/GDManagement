@@ -43,8 +43,6 @@ export default function App() {
     };
     LogBox.ignoreLogs(ignoreWarns);
     return null; 
-  } else {
-    console.log('carregou')
   }
 
   return (
