@@ -1,50 +1,50 @@
 export default [
     {
-        key:'january',
+        key:'1',
         name:'January',
     }
     ,{
-        key:'february',
+        key:'2',
         name:'February',
     },
     {
-        key:'march',
+        key:'3',
         name:'March',
     },
     {
-        key:'april',
+        key:'4',
         name:'April',
     },
     {
-        key:'may',
+        key:'5',
         name:'May',
     },
     {
-        key:'june',
+        key:'6',
         name:'June'
     },
     {
-        key:'july',
+        key:'7',
         name:'July',
     },
     {
-        key:'august',
+        key:'8',
         name:'August',
     },
     {
-        key:'september',
+        key:'9',
         name:'September',
     },
     {
-        key:'october',
+        key:'10',
         name:'October',
     },
     {
-        key:'november',
+        key:'11',
         name:'November',
     },
     {
-        key:'december',
+        key:'12',
         name:'December',
     }
 ];

@@ -5,7 +5,7 @@ export const EXPENSES = {
         label: "Internet",
         value: 99,
         color: "#975FFF",
-        percent: "8%"
+        percent: "20%"
       },
       {
         id: "2",
@@ -26,14 +26,14 @@ export const EXPENSES = {
         label: "Tênis",
         value: 120,
         color: "#35E3AF",
-        percent: "9%"
+        percent: "90%"
       },
       {
         id: "5",
         label: "Pizza",
         value: 60,
         color: "#55C5FE",
-        percent: "5%"
+        percent: "50%"
       },
     ],
     'Fevereiro': [

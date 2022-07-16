@@ -2,12 +2,13 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { Modal, Text } from 'react-native';
+import { Modal } from 'react-native';
 
 import { VictoryPie } from 'victory-native';
 import { Button } from '../../components/Button';
-import { EXPENSES } from '../../utils/expensives';
-import Months from '../../utils/Months';
+import { useProduct } from '../../hooks/product';
+import { GetColorCategory } from '../../utils/Categories';
+
 import { CategorySelect } from '../Products/CategorySelect';
 
 import { 
@@ -20,8 +21,8 @@ import {
   FieldsContainer, 
   FieldText, 
   Footer, 
-  GraficContainer, 
-  GraficContent, 
+  GraphicContainer, 
+  GraphicContent, 
   Header,
   HeaderContainer,
   HeaderTitle,
@@ -30,25 +31,80 @@ import {
 
 export default function Statistics (){
 
- const [data, setData] = useState([]);
+ const [data, setData] = useState([{
+    "color": "#ef21ef",
+    "id": "1",
+    "label": "null",
+    "value": 1,
+ }]);
+
  const [month, setMonth] = useState({
-    key: 'january',
+    key: '7',
     name: 'January',
  });
+
+ const { products } = useProduct();
  const navigation = useNavigation<any>();
 
  const [categoryModalOpen, setCategoryModalOpen] = useState(false);
 
+ const getTotalValuePerCategory = (category:string) => {
+    let initialValue = 0;
+    const result = products.filter((products: any) => {
+        if (products.category === category) {
+            return products;
+        }
+    }).reduce(
+      (acc , actualValue) => acc + actualValue.price
+      , initialValue
+    )
+    return result;
+ }
+
+  async function loadData () {  
+    const insert:string[] = [];
+    const AllProducts = products
+    .filter((products: any) =>
+      (new Date(products.date).getMonth()+1) === Number(month.key))
+    .map((product: any) => {
+      if(insert.indexOf(product.category) === -1){
+        insert.push(product.category);
+        return {
+            id: product.id,
+            label: product.category,
+            value: getTotalValuePerCategory(product.category),
+            color: GetColorCategory(product.category),
+        };
+      } 
+    })
+    .filter((prod) => prod !== undefined);
+
+    if (AllProducts.length === 0) {
+      setData([{
+        "color": "#ef21ef",
+        "id": "1",
+        "label": "null",
+        "value": 1,
+      }]);
+    } else {
+      setData(AllProducts);
+    }
+ }
+
  useEffect(() => {
-  setData(EXPENSES[month.name]);
+   loadData();
  }, []);
 
+ useEffect(() => {
+   loadData();
+ }, [month]);
+
  function handleOpenSelectCategoryModal() {
-  setCategoryModalOpen(true)
+    setCategoryModalOpen(true)
  }
 
  function handleCloseSelectCategoryModal() {
-      setCategoryModalOpen(false)
+    setCategoryModalOpen(false)
  }
 
  return (
@@ -70,16 +126,16 @@ export default function Statistics (){
         <HeaderTitle> Statistics </HeaderTitle>
       </HeaderContainer>
     </Header>
-    <GraficContainer>
+    <GraphicContainer>
 
-      <GraficContent>
+      <GraphicContent visible={(data[0].label !== "null")}>
         <Circle>
           <VictoryPie 
             data={data}
             height={250}
             x="label"
             y="value"
-            colorScale={data.map(expense => expense.color)}
+            colorScale={data.map(product => product.color)}
             innerRadius={35}
             style={{
               labels: {
@@ -88,51 +144,20 @@ export default function Statistics (){
             }}
           />
         </Circle>
-      </GraficContent>
+      </GraphicContent>
 
+      {data.length > 0 &&
       <DetailsContent> 
         <DetailsArea>
-          <FieldsContainer>
-            <FieldColor></FieldColor>
-            <FieldText> Food </FieldText>
-          </FieldsContainer>
-
-          <FieldsContainer>
-            <FieldColor></FieldColor>
-            <FieldText> Veichles </FieldText>
-          </FieldsContainer>
-
-          <FieldsContainer>
-            <FieldColor></FieldColor>
-            <FieldText> teste kkk </FieldText>
-          </FieldsContainer>
-
-          <FieldsContainer>
-            <FieldColor></FieldColor>
-            <FieldText> teste kkk </FieldText>
-          </FieldsContainer>
-          
-          <FieldsContainer>
-            <FieldColor></FieldColor>
-            <FieldText> kkk </FieldText>
-          </FieldsContainer>
-
-          <FieldsContainer>
-            <FieldColor></FieldColor>
-            <FieldText> kkk </FieldText>
-          </FieldsContainer>
-
-          <FieldsContainer>
-            <FieldColor></FieldColor>
-            <FieldText> kkk </FieldText>
-          </FieldsContainer>
-
-          <FieldsContainer>
-            <FieldColor></FieldColor>
-            <FieldText> kkk </FieldText>
-          </FieldsContainer>                   
+          {data.map((product: any) => (
+            <FieldsContainer key={product.id}>
+              <FieldColor color={product.color}></FieldColor>
+              <FieldText> {product.label} </FieldText>
+            </FieldsContainer>
+          ))}
         </DetailsArea>
       </DetailsContent>
+    }
       <Modal visible={categoryModalOpen}>
         <CategorySelect
           type="secondary"
@@ -141,7 +166,8 @@ export default function Statistics (){
           closeSelectCategory={handleCloseSelectCategoryModal}
         />
       </Modal>
-    </GraficContainer>
+    </GraphicContainer>
+
     <Footer> 
       <WrapperButton>
         <Button

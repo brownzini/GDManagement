@@ -45,25 +45,13 @@ import {
 
 import { GetIconsCategory } from '../../utils/Categories';
 import { useNavigation } from '@react-navigation/native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useProduct } from '../../hooks/product';
 
 export default function Home (){
- const dataKey = '@gofinance:transactions';
  const navigation = useNavigation<any>();
 
- const { products, setProducts } =  useProduct();
+ const { products } =  useProduct();
  const [totalValueResult, setTotalValueResult] = useState<number>(0);
-
- useEffect(() => {
-    async function loadTransactions() {
-      const data = await AsyncStorage.getItem(dataKey);
-      if (data) {
-          setProducts(JSON.parse(data));
-      }
-    }
-    loadTransactions();
- }, []);
 
  useEffect(() => { 
     let initialValue = 0;

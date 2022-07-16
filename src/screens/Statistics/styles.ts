@@ -3,6 +3,14 @@ import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+interface Props  {
+  color: string;
+}
+
+interface Visibility {
+  visible: boolean;
+}
+
 export const Container = styled.View`
   flex: 1;
 `;
@@ -34,14 +42,14 @@ export const ButtonBack = styled.TouchableOpacity`
     width: ${RFPercentage(20)}px;
 `;
 
-export const GraficContainer = styled.View`
+export const GraphicContainer = styled.View`
     flex:1;
     margin-bottom: 15%;
     flex-direction: row;
 `;
 
-export const GraficContent = styled.View`
-    width:60%;
+export const GraphicContent = styled.View<Visibility>`
+    width: ${({ visible }) => (visible ? '60%' : '100%')};
     justify-content: center;
     align-items: center;
 `;
@@ -68,10 +76,10 @@ export const FieldsContainer = styled.View`
     margin-bottom: 15px;
 `;
 
-export const FieldColor = styled.View`
+export const FieldColor = styled.View<Props>`
     width:10%;
     height:50%;
-    background-color:gray;
+    background-color: ${({ color }) => color};
     border-radius:2px;
     margin-right:2px;
 `;

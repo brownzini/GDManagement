@@ -54,3 +54,16 @@ export function GetIconsCategory (param:string) {
         default: return food;
     }
 }
+
+export function GetColorCategory (param:string) {
+  switch (param) {
+      case 'Home Appliance': return '#975FFF';
+      case 'Electronics': return '#FF8555';
+      case 'Derivative': return '#576EFE';
+      case 'Materials': return '#35E3AF';
+      case 'Workplace Safety': return '#55C5FE';
+      case 'Surveillance': return '#FF0F0F';
+      case 'Vehicle': return '#FFD90F';
+      default: return '#FF21DB';
+  }
+}
