@@ -5,6 +5,7 @@ import Home from '../screens/Home';
 import ListProducts from '../screens/Products/ListProducts';
 import CreateProducts from '../screens/Products/CreateProducts';
 import UpdateProducts from '../screens/Products/UpdateProducts';
+import Statistics from '../screens/Statistics';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -41,6 +42,13 @@ export function AppStackRoutes() {
          <Screen
             name='UpdateProducts'
             component={UpdateProducts}
+            options={{
+                gestureEnabled: false,
+            }}
+         />
+        <Screen
+            name='Statistics'
+            component={Statistics}
             options={{
                 gestureEnabled: false,
             }}

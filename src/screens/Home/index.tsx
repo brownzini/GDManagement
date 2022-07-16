@@ -113,7 +113,7 @@ export default function Home (){
         </LastProductsBody>  
      </LastProductsContent>
 
-     <ReviewTitle> Weekly Review </ReviewTitle>
+     <ReviewTitle> Speed dial</ReviewTitle>
 
      <ReviewContent>
         <ReviewBody>
@@ -127,7 +127,9 @@ export default function Home (){
           </ReviewFirst>
           
           <ReviewSecond>
-           <ButtonContent2>
+           <ButtonContent2
+            onPress={() => navigation.navigate('Statistics')}
+           >
             <ReviewContent2>
              <Icon name="graph-bar" /> 
              <ReviewStatisticsTitle> 
