@@ -36,13 +36,11 @@ export const ButtonBack = styled.TouchableOpacity`
 
 export const GraficContainer = styled.View`
     flex:1;
-    background-color:blue;
     flex-direction: row;
 `;
 
 export const GraficContent = styled.View`
-    width:70%;
-    background-color:green;
+    width:60%;
     justify-content: center;
     align-items: center;
 `;
@@ -50,12 +48,10 @@ export const GraficContent = styled.View`
 export const Circle = styled.View`
     width:100%;
     height:50%;
-    background-color:red;
 `;
 
 export const DetailsContent = styled.View`
     flex:1;
-    background-color:yellow;
     justify-content: center;
     align-items: center;
 `;
@@ -63,5 +59,37 @@ export const DetailsContent = styled.View`
 export const DetailsArea = styled.View`
     width:100%;
     height:50%;
-    background-color:blue;
+`;
+
+export const FieldsContainer = styled.View`
+    flex:1;
+    flex-direction:row;
+    align-items: center;
+`;
+
+export const FieldColor = styled.View`
+    width:10%;
+    height:50%;
+    background-color:gray;
+    border-radius:2px;
+    margin-right:2px;
+`;
+
+export const FieldText = styled.Text`
+    font-size: ${RFValue(16)}px;
+    font-family: ${({ theme }) => theme.FONTS.TITLE};
+    color: ${({ theme }) => theme.COLORS.ALERT_800};
+`;
+
+export const Footer = styled(LinearGradient).attrs(({ theme }) => ({
+  colors: theme.COLORS.GRADIENT_PRODUCT_HEADER,
+  start: { x: 0, y: 1 },
+  end: { x: 0.5, y: 0.5 }
+}))`
+    width: 100%;
+    height: ${RFPercentage(20)}px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    padding-top: ${Platform.OS === 'ios' ? 0 : 26}px;
 `;
