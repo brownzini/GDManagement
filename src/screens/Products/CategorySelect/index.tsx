@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList } from "react-native";
 import { Button } from "../../../components/Button";
 import { Categories } from "../../../utils/Data";
+import months from '../../../utils/months';
 
 import {
     Container,
@@ -22,12 +23,14 @@ interface Props {
     category: Category;
     setCategory: (category: Category) => void;
     closeSelectCategory: () => void;
+    type?: string;
 }
 
 export function CategorySelect({
     category,
     setCategory,
-    closeSelectCategory
+    closeSelectCategory,
+    type,
 }: Props) {
     function handleCategorySeletc(category: Category){
         setCategory(category);
@@ -35,10 +38,10 @@ export function CategorySelect({
     return (
         <Container>
             <Header>
-                <Title>Categoria</Title>
+                <Title>{(type === 'primary') ? 'Category' : 'Month'}</Title>
             </Header>
             <FlatList
-                data={Categories}
+                data={(type === 'primary') ? Categories : months}
                 style={{ flex: 1, width: '100%' }}
                 keyExtractor={(item) => item.key}
                 renderItem={({ item }) => (
@@ -53,7 +56,7 @@ export function CategorySelect({
             />
             <Footer>
                 <Button
-                    title="Selecionar"
+                    title="Select"
                     onPress={closeSelectCategory}
                 />
             </Footer>

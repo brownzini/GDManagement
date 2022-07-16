@@ -36,6 +36,7 @@ export const ButtonBack = styled.TouchableOpacity`
 
 export const GraficContainer = styled.View`
     flex:1;
+    margin-bottom: 15%;
     flex-direction: row;
 `;
 
@@ -46,8 +47,7 @@ export const GraficContent = styled.View`
 `;
 
 export const Circle = styled.View`
-    width:100%;
-    height:50%;
+    align-items: flex-end;
 `;
 
 export const DetailsContent = styled.View`
@@ -58,13 +58,14 @@ export const DetailsContent = styled.View`
 
 export const DetailsArea = styled.View`
     width:100%;
-    height:50%;
+    height:100%;
 `;
 
 export const FieldsContainer = styled.View`
     flex:1;
     flex-direction:row;
     align-items: center;
+    margin-bottom: 15px;
 `;
 
 export const FieldColor = styled.View`
@@ -89,7 +90,11 @@ export const Footer = styled(LinearGradient).attrs(({ theme }) => ({
     width: 100%;
     height: ${RFPercentage(20)}px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: row;
-    padding-top: ${Platform.OS === 'ios' ? 0 : 26}px;
+    padding-top: ${Platform.OS === 'ios' ? 0 : 0}px;
+`;
+
+export const WrapperButton = styled.View`
+    width:80%;
 `;

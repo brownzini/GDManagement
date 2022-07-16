@@ -151,6 +151,7 @@ export default function CreateProducts (){
      </Header>
       <Modal visible={categoryModalOpen}>
         <CategorySelect
+          type="primary"
           category={category}
           setCategory={setCategory}
           closeSelectCategory={handleCloseSelectCategoryModal}
