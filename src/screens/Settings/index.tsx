@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
   KeyboardAvoidingView, 
-  Platform, 
-  Switch 
+  Platform,  
 }
  from "react-native";
 
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
 
 import { 
+  ConfirmArea,
     Container, 
     Content,
-    Field,
     Header,
     HeaderText,
     HeaderTitle,
@@ -19,40 +18,51 @@ import {
 } from "./styles";
 
 import BackButton from "../../components/BackButton";
-import { Input } from "../../components/Input";
 import FieldToggle from "../../components/FieldToggle";
+import { Button } from "../../components/Button";
+import { useAuth } from "../../hooks/auth";
 
 export default function Settings() {
   const navigation = useNavigation<any>();
 
-  const [isEnabled, setIsEnabled] = useState<boolean>(false);
+  const { 
+    isEnabledTotal, setIsEnabledTotal,
+    isEnabledStatistics, setIsEnabledStatistics,
+    isEnabledProducts, setIsEnabledProducts,
+  } = useAuth();
 
   return (
     <Container>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <Header>
           <HeaderTitle>
-            <BackButton 
-              color="#fff"
-              onPress={() => navigation.goBack()} 
-            /> 
             <HeaderText> Settings </HeaderText>
           </HeaderTitle>
         </Header>
         <Content>
           <Wrapper>
-           <Field>
-              <Input 
-                placeholder="username"
-                autoCapitalize="none"
-                autoCorrect={false}
-              />
-           </Field> 
            <FieldToggle
              fieldName="Total"
-             isEnabled={isEnabled}
-             setIsEnabled={setIsEnabled}
+             isEnabled={isEnabledTotal}
+             setIsEnabled={setIsEnabledTotal}
            />
+           <FieldToggle
+             fieldName="Statistics"
+             isEnabled={isEnabledStatistics}
+             setIsEnabled={setIsEnabledStatistics}
+           />
+           <FieldToggle
+             fieldName="Products"
+             isEnabled={isEnabledProducts}
+             setIsEnabled={setIsEnabledProducts}
+           />
+          <ConfirmArea> 
+            <Button
+              title="Back"
+              type="primary"
+              onPress={() => navigation.goBack()}
+            />
+          </ConfirmArea>
           </Wrapper>
         </Content>
       </KeyboardAvoidingView>

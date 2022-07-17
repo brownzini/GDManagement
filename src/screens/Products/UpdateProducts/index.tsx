@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Modal } from 'react-native';
 import BackButton from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 
 import { Input } from '../../../components/Input';
 import { CategorySelect } from '../CategorySelect';
-
-import uuid from 'react-native-uuid';
-
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { 
   Alert,
@@ -42,7 +38,7 @@ export default function UpdateProducts (){
   const { params } = useRoute();
   const { data } = params as any;
   
-  const { products,editProduct } = useProduct();
+  const { editProduct } = useProduct();
 
   const [product_name, setProduct_name] = useState<string>(data.name);
   const [product_price, setProduct_price] = useState<string>(String(data.price));

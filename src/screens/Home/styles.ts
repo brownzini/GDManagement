@@ -1,5 +1,5 @@
 import { LinearGradient } from 'expo-linear-gradient';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 import { RFValue } from "react-native-responsive-fontsize";
 
@@ -9,6 +9,12 @@ import { EvilIcons } from '@expo/vector-icons';
 import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
 interface Props extends RectButtonProps {
     children: React.ReactNode;
+}
+interface ReviewProps {
+    firstActive?: boolean;
+    secondActive?: boolean;
+    thirdActive?: boolean;
+    fourthActive?: boolean;
 }
 
 export const Container = styled(LinearGradient).attrs(({ theme }) => ({
@@ -161,9 +167,9 @@ export const ReviewMoneyTitle = styled.Text`
     color: ${({ theme }) => theme.COLORS.PRIMARY_50};
 `;
 
-export const ReviewSecond = styled.View`
-    width:50%;
-    height:60px;
+export const ReviewSecond = styled.View<ReviewProps>`
+    width: ${({ theme, firstActive }) => firstActive ? '50%' : '100%'};
+    height: ${({ theme, fourthActive }) => fourthActive ? '60px' : '100px'};
     background-color: ${({ theme }) => theme.COLORS.PRIMARY_800};
     border-width: 1px;
     border-color: ${({ theme }) => theme.COLORS.SECONDARY_900};
@@ -174,6 +180,7 @@ export const ReviewSecond = styled.View`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom: ${({ theme, firstActive }) => firstActive ? '0px' : '10px'};
 `;
 
 export const ReviewStatisticsTitle = styled.Text`
@@ -189,16 +196,17 @@ export const ButtonContent3 = styled(RectButton)<Props>`
     align-items: center;
 `;
 
-export const ReviewThird = styled.View`
-    width:45%;
-    height:60px;
+export const ReviewThird = styled.View<ReviewProps>`
+    width: ${({ theme, firstActive, secondActive, fourthActive }) => firstActive && fourthActive && !secondActive  ? '50%' : '45%'};
+    height: ${({ theme, firstActive, secondActive, fourthActive }) => firstActive && fourthActive && !secondActive ? '100px' : '60px'};
     background-color: ${({ theme }) => theme.COLORS.PRIMARY_800};
     border-width: 1px;
     border-color: ${({ theme }) => theme.COLORS.SECONDARY_900};
     border-radius: 5px;
-    margin-left:5px;
+    margin-left: ${({ theme, fourthActive, secondActive }) => (fourthActive && secondActive) ? '5px' : '8px'};
     justify-content: center;
     align-items: center;
+    margin-bottom: ${({ theme, firstActive, secondActive }) => (firstActive && secondActive) ? '0px' : '10px'};
 `;
 
 export const ReviewWrapperSettings = styled.View`
@@ -213,15 +221,19 @@ export const ReviewSettingsTitle = styled.Text`
     color: ${({ theme }) => theme.COLORS.PRIMARY_50};
 `;
 
-export const ReviewFourth = styled.View`
-    width:50%;
-    height:100px;
+export const ReviewFourth = styled.View<ReviewProps>`
+    width: ${({ theme, secondActive }) => secondActive ? '50%' : '97%'};
+    height:${({ theme, secondActive }) => secondActive ? '100px' : '75px'};
     background-color: ${({ theme }) => theme.COLORS.PRIMARY_800};
     border-width: 1px;
     border-color: ${({ theme }) => theme.COLORS.SECONDARY_900};
     border-radius: 5px;
-    margin-top: ${RFValue(-42)}px; 
-    margin-left:5px;
+
+    ${({ theme, firstActive, secondActive }) => css`
+        margin-top: ${RFValue(firstActive && secondActive ? -43 : 0)}px;
+    `};
+
+    margin-left: ${({ theme, firstActive }) => firstActive ? '5px' : '10px'};
     align-items: center;
     justify-content: center;
 `;

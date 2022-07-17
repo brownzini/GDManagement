@@ -29,7 +29,7 @@ export const HeaderTitle = styled.View`
 `;
 
 export const HeaderText = styled.Text`
-    font-size: ${RFValue(16)}px;
+    font-size: ${RFValue(24)}px;
     font-family: ${({ theme }) => theme.FONTS.TITLE};
     color: ${({ theme }) => theme.COLORS.TITLE};
 `;
@@ -37,7 +37,6 @@ export const HeaderText = styled.Text`
 export const Content = styled.View`
   width: 100%;
   height: 100%;
-  background-color:white;
 `;
 
 export const Wrapper = styled.View`
@@ -51,6 +50,12 @@ export const Field = styled.View`
   width:95%;
   flex-direction: row;
   align-items: center;
+`;
+
+export const ConfirmArea = styled.View`
+  width: 100%;
+  justify-content: flex-start;
+  padding: 100px 20px;
 `;
 
 export const Title = styled.Text`

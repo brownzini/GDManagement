@@ -46,11 +46,21 @@ import {
 import { GetIconsCategory } from '../../utils/Categories';
 import { useNavigation } from '@react-navigation/native';
 import { useProduct } from '../../hooks/product';
+import { useAuth } from '../../hooks/auth';
 
 export default function Home (){
  const navigation = useNavigation<any>();
 
  const { products } =  useProduct();
+
+ const {
+    isEnabledTotal, 
+    isEnabledStatistics, 
+    isEnabledSettings, 
+    isEnabledProducts,
+ } = useAuth();
+
+
  const [totalValueResult, setTotalValueResult] = useState<number>(0);
 
  useEffect(() => { 
@@ -105,16 +115,24 @@ export default function Home (){
 
      <ReviewContent>
         <ReviewBody>
-          <ReviewFirst>
-             <ReviewWrapper>
-                <ReviewMoneyTitle> Total </ReviewMoneyTitle>
-                <ReviewMoney> 
-                  $ { totalValueResult.toFixed(2) } 
-                </ReviewMoney>
-             </ReviewWrapper>
-          </ReviewFirst>
           
-          <ReviewSecond>
+        {isEnabledTotal && (
+          <ReviewFirst>
+            <ReviewWrapper>
+              <ReviewMoneyTitle> Total </ReviewMoneyTitle>
+              <ReviewMoney> 
+                  $ { totalValueResult.toFixed(2) } 
+              </ReviewMoney>
+            </ReviewWrapper>
+          </ReviewFirst>   )}
+          
+          {isEnabledStatistics && (
+          <ReviewSecond 
+            firstActive={isEnabledTotal}
+            secondActive={isEnabledStatistics}
+            thirdActive={isEnabledSettings}
+            fourthActive={isEnabledProducts}
+          >
            <ButtonContent2
             onPress={() => navigation.navigate('Statistics')}
            >
@@ -125,9 +143,15 @@ export default function Home (){
              </ReviewStatisticsTitle>
             </ReviewContent2>
            </ButtonContent2>
-          </ReviewSecond>
-
-          <ReviewThird>
+          </ReviewSecond>)}
+          
+  
+          <ReviewThird
+            firstActive={isEnabledTotal}
+            secondActive={isEnabledStatistics}
+            thirdActive={isEnabledSettings}
+            fourthActive={isEnabledProducts}
+          >
            <ButtonContent3 
             onPress={() => navigation.navigate('Settings')}
            >
@@ -140,7 +164,13 @@ export default function Home (){
            </ButtonContent3>
           </ReviewThird>
 
-          <ReviewFourth>
+          {isEnabledProducts && (
+          <ReviewFourth
+            firstActive={isEnabledTotal}
+            secondActive={isEnabledStatistics}
+            thirdActive={isEnabledSettings}
+            fourthActive={isEnabledProducts}
+          >
            <ButtonContent 
             onPress={() => navigation.navigate('ListProducts')}
            >
@@ -154,7 +184,7 @@ export default function Home (){
                {products.length}
             </ReviewProductsTotal>
            </ButtonContent>
-          </ReviewFourth>
+          </ReviewFourth>)}
         </ReviewBody>
      </ReviewContent>
    </Container>
