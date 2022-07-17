@@ -54,8 +54,13 @@ export const GraphicContent = styled.View<Visibility>`
     align-items: center;
 `;
 
-export const Circle = styled.View`
-    align-items: flex-end;
+export const Circle = styled.View``;
+
+export const Title = styled.Text`
+    text-align: center;
+    font-size: ${RFValue(20)}px;
+    font-family: ${({ theme }) => theme.FONTS.TITLE};
+    color: ${({ theme }) => theme.COLORS.ALERT_800};
 `;
 
 export const DetailsContent = styled.View`

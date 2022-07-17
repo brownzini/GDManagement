@@ -2,12 +2,13 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { Modal } from 'react-native';
+import { Modal, Text } from 'react-native';
 
 import { VictoryPie } from 'victory-native';
 import { Button } from '../../components/Button';
 import { useProduct } from '../../hooks/product';
 import { GetColorCategory } from '../../utils/Categories';
+import getMonth from '../../utils/getMonth';
 
 import { CategorySelect } from '../Products/CategorySelect';
 
@@ -26,10 +27,12 @@ import {
   Header,
   HeaderContainer,
   HeaderTitle,
+  Title,
   WrapperButton, 
 } from './styles';
 
 export default function Statistics (){
+ const currentDate = String(new Date().getMonth()+1);
 
  const [data, setData] = useState([{
     "color": "#ef21ef",
@@ -39,8 +42,8 @@ export default function Statistics (){
  }]);
 
  const [month, setMonth] = useState({
-    key: '7',
-    name: 'January',
+    key: currentDate,
+    name: getMonth(currentDate),
  });
 
  const { products } = useProduct();
@@ -143,6 +146,7 @@ export default function Statistics (){
               }
             }}
           />
+          {(data[0].label === "null") && <Title> No products registered </Title>}
         </Circle>
       </GraphicContent>
 
