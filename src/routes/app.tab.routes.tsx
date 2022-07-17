@@ -4,8 +4,10 @@ import { Platform } from 'react-native'
 
 import { AppStackRoutes } from './app.stack.routes'
 
-import HomeSvg from '../assets/home.svg'
-import { SignIn } from '../screens/SignIn';
+import HomeSvg from '../assets/home.svg';
+import BookSvg from '../assets/books.svg';
+
+import Docs from '../screens/Docs';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -28,17 +30,17 @@ export function AppTabRoutes() {
           name='Inicio'
           component={AppStackRoutes}
           options={{
-                tabBarIcon: ({ color }) => (
-                    <HomeSvg width={24} height={24} fill={color} />
-                )
+            tabBarIcon: ({ color }) => (
+              <HomeSvg width={24} height={24} fill={color} />
+            )
           }}
         />
         <Screen
-          name="MyCars" 
-          component={SignIn} 
+          name="Docs" 
+          component={Docs} 
           options={{
             tabBarIcon: ({ focused, color }) => (
-                <HomeSvg width={24} height={24} fill={color} />
+              <BookSvg width={24} height={24} fill={color} />
             )
           }}
         />
