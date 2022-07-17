@@ -17,7 +17,6 @@ import {
     Wrapper,
 } from "./styles";
 
-import BackButton from "../../components/BackButton";
 import FieldToggle from "../../components/FieldToggle";
 import { Button } from "../../components/Button";
 import { useAuth } from "../../hooks/auth";
