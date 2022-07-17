@@ -54,7 +54,17 @@ export const WrapperTitle = styled.Text`
 `;
 
 export const Field = styled.View`
-  padding: 0px 20px;
+  width:95%;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const FieldToggle = styled.View`
+  width:100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 30px;
 `;
 
 export const Title = styled.Text`
