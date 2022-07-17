@@ -1,23 +1,60 @@
 import styled, { css } from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { Platform } from "react-native";
 
-export const Container = styled(LinearGradient).attrs(({ theme }) => ({
-  colors: theme.COLORS.GRADIENT_SIGNIN,
-  start: { x: 0, y: 1 },
-  end: { x: 0.5, y: 0.5 }
-}))`
+export const Container = styled.View`
   flex: 1;
   justify-content: center;
 `;
 
-export const Content = styled.ScrollView.attrs({
-  showsVerticalScrollIndicator: false,
-  contentContainerStyle: {
-    paddingBottom: 48
-  },
-})`
+export const Header = styled(LinearGradient).attrs(({ theme }) => ({
+  colors: theme.COLORS.GRADIENT_PRODUCT_HEADER,
+  start: { x: 0, y: 1 },
+  end: { x: 0.5, y: 0.5 }
+}))`
+
+    height: ${RFPercentage(50)}px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    padding-top: ${Platform.OS === 'ios' ? 0 : 26}px;
+`;
+
+export const HeaderTitle = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: ${RFPercentage(33)}px;
+`;
+
+export const HeaderText = styled.Text`
+    font-size: ${RFValue(16)}px;
+    font-family: ${({ theme }) => theme.FONTS.TITLE};
+    color: ${({ theme }) => theme.COLORS.TITLE};
+`;
+
+export const Content = styled.View`
   width: 100%;
-  padding: 0 32px;
+  height: 100%;
+  background-color:white;
+`;
+
+export const Wrapper = styled.View`
+  flex: 1;
+  padding: 20px 0px;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+export const WrapperTitle = styled.Text`
+    font-size: ${RFValue(18)}px;
+    font-family: ${({ theme }) => theme.FONTS.TITLE};
+    color: ${({ theme }) => theme.COLORS.ALERT_800};
+`;
+
+export const Field = styled.View`
+  padding: 0px 20px;
 `;
 
 export const Title = styled.Text`

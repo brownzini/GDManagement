@@ -150,7 +150,7 @@ export default function Statistics (){
         </Circle>
       </GraphicContent>
 
-      {data.length > 0 &&
+      {(data[0].label !== "null") &&
       <DetailsContent> 
         <DetailsArea>
           {data.map((product: any) => (
@@ -161,7 +161,7 @@ export default function Statistics (){
           ))}
         </DetailsArea>
       </DetailsContent>
-    }
+      }
       <Modal visible={categoryModalOpen}>
         <CategorySelect
           type="secondary"
