@@ -6,6 +6,7 @@ import { AppStackRoutes } from './app.stack.routes'
 
 import HomeSvg from '../assets/home.svg';
 import BookSvg from '../assets/books.svg';
+import LogoutSvg from '../assets/logout.svg';
 
 import Docs from '../screens/Docs';
 
@@ -41,6 +42,15 @@ export function AppTabRoutes() {
           options={{
             tabBarIcon: ({ focused, color }) => (
               <BookSvg width={24} height={24} fill={color} />
+            )
+          }}
+        />
+        <Screen
+          name="Logout" 
+          component={LogoutSvg} 
+          options={{
+            tabBarIcon: ({ focused, color }) => (
+              <LogoutSvg width={24} height={24} fill={color} />
             )
           }}
         />
