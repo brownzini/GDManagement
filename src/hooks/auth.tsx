@@ -31,10 +31,10 @@ function AuthProvider({ children }: AuthProviderProps) {
     const [isLogged, setIsLogged] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
-    const [isEnabledTotal, setIsEnabledTotal] = useState<boolean>(false);
+    const [isEnabledTotal, setIsEnabledTotal] = useState<boolean>(true);
     const [isEnabledStatistics, setIsEnabledStatistics] = useState<boolean>(true);
-    const [isEnabledSettings, setIsEnabledSettings] = useState<boolean>(false);
-    const [isEnabledProducts, setIsEnabledProducts] = useState<boolean>(false);
+    const [isEnabledSettings, setIsEnabledSettings] = useState<boolean>(true);
+    const [isEnabledProducts, setIsEnabledProducts] = useState<boolean>(true);
 
     return (
       <AuthContext.Provider

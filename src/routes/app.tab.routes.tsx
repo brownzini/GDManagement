@@ -9,6 +9,7 @@ import BookSvg from '../assets/books.svg';
 import LogoutSvg from '../assets/logout.svg';
 
 import Docs from '../screens/Docs';
+import Logout from '../screens/Logout';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -47,7 +48,7 @@ export function AppTabRoutes() {
         />
         <Screen
           name="Logout" 
-          component={LogoutSvg} 
+          component={Logout} 
           options={{
             tabBarIcon: ({ focused, color }) => (
               <LogoutSvg width={24} height={24} fill={color} />

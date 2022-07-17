@@ -25,6 +25,7 @@ export default {
       GRADIENT_HOME: ['#5E238D', '#6C0AB9'],
       GRADIENT_PRODUCT_HEADER: ['#6C0AB9', '#5E238D'],
       GRADIENT_PRODUCT_CARD: ['#B75AFF', '#9A35EA'],
+      GRADIENT_HEADER_DOCS: ['#FFF968', '#FBF112'],
     },
     SPECIFIC_COLOR : {
       PRIMARY_900: '#4D0884',
