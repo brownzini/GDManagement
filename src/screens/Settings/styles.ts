@@ -47,24 +47,10 @@ export const Wrapper = styled.View`
   align-items: center;
 `;
 
-export const WrapperTitle = styled.Text`
-    font-size: ${RFValue(18)}px;
-    font-family: ${({ theme }) => theme.FONTS.TITLE};
-    color: ${({ theme }) => theme.COLORS.ALERT_800};
-`;
-
 export const Field = styled.View`
   width:95%;
   flex-direction: row;
   align-items: center;
-`;
-
-export const FieldToggle = styled.View`
-  width:100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 30px;
 `;
 
 export const Title = styled.Text`

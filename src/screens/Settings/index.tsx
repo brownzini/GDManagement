@@ -16,19 +16,16 @@ import {
     HeaderText,
     HeaderTitle,
     Wrapper,
-    FieldToggle,
-    WrapperTitle, 
 } from "./styles";
 
 import BackButton from "../../components/BackButton";
 import { Input } from "../../components/Input";
+import FieldToggle from "../../components/FieldToggle";
 
 export default function Settings() {
   const navigation = useNavigation<any>();
 
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
-
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
   return (
     <Container>
@@ -51,46 +48,11 @@ export default function Settings() {
                 autoCorrect={false}
               />
            </Field> 
-           <FieldToggle>
-              <WrapperTitle> Total Field </WrapperTitle>
-              <Switch
-                trackColor={{ false: "#D298FF", true: "#A737FF" }}
-                thumbColor={isEnabled ? "#E3BFFF" : "#f4f3f4"}
-                ios_backgroundColor="#3e3e3e"
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-           </FieldToggle>
-           <FieldToggle>
-              <WrapperTitle> Settings Field </WrapperTitle>
-              <Switch
-                trackColor={{ false: "#D298FF", true: "#A737FF" }}
-                thumbColor={isEnabled ? "#E3BFFF" : "#f4f3f4"}
-                ios_backgroundColor="#3e3e3e"
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-           </FieldToggle>
-           <FieldToggle>
-              <WrapperTitle> Statics Field </WrapperTitle>
-              <Switch
-                trackColor={{ false: "#D298FF", true: "#A737FF" }}
-                thumbColor={isEnabled ? "#E3BFFF" : "#f4f3f4"}
-                ios_backgroundColor="#3e3e3e"
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-           </FieldToggle>
-           <FieldToggle>
-              <WrapperTitle> Products Field </WrapperTitle>
-              <Switch
-                trackColor={{ false: "#D298FF", true: "#A737FF" }}
-                thumbColor={isEnabled ? "#E3BFFF" : "#f4f3f4"}
-                ios_backgroundColor="#3e3e3e"
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-           </FieldToggle>
+           <FieldToggle
+             fieldName="Total"
+             isEnabled={isEnabled}
+             setIsEnabled={setIsEnabled}
+           />
           </Wrapper>
         </Content>
       </KeyboardAvoidingView>
