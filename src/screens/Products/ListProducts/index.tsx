@@ -1,5 +1,8 @@
+//React and React native
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
+
+//Components
 import { Button } from '../../../components/Button';
 
 import { 
