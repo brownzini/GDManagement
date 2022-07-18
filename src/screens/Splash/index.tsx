@@ -9,7 +9,7 @@ export default function Principal (){
   const { setIsLogged } = useAuth();
   const { setProducts } = useProduct();
 
-  const dataKey = '@gofinance:transactions';
+  const dataKey = '@GDManagement:products';
 
   useEffect(() => {
     async function loadTransactions() {

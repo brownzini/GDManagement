@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { RFValue } from 'react-native-responsive-fontsize';
+import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
   flex: 1;
@@ -39,4 +39,10 @@ export const HeaderTitle = styled.Text`
     font-family: ${({ theme }) => theme.FONTS.TITLE};
     color: ${({ theme }) => theme.COLORS.SECONDARY_500};
     font-weight: bold;
+`;
+
+export const Content = styled.View`
+    flex: 1;
+    padding: 0 24px;
+    background-color: ${({ theme }) => theme.COLORS.SHAPE};
 `;

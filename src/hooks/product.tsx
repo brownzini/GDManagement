@@ -28,7 +28,7 @@ interface ProductProviderProps {
 const ProductContext = createContext<ProductContextData>({} as ProductContextData)
 
 function ProductProvider({ children }: ProductProviderProps) {
-    const dataKey = '@gofinance:transactions';
+    const dataKey = '@GDManagement:products';
     const [products, setProducts] = useState<Product[]>([]);
 
     async function editProduct(data:Product) {

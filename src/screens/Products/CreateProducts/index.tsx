@@ -71,7 +71,7 @@ export default function CreateProducts (){
         }
 
         try {
-          const dataKey = '@gofinance:transactions';
+          const dataKey = '@GDManagement:products';
           const data = await AsyncStorage.getItem(dataKey);
           const currentData = data ? JSON.parse(data) : [];
 
