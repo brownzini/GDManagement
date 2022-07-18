@@ -32,13 +32,13 @@ export function CategorySelect({
     closeSelectCategory,
     type,
 }: Props) {
-    function handleCategorySeletc(category: Category){
+    function handleCategorySelect(category: Category){
         setCategory(category);
     }
     return (
         <Container>
             <Header>
-                <Title>{(type === 'primary') ? 'Category' : 'Month'}</Title>
+                <Title> {(type === 'primary') ? 'Category' : 'Month'} </Title>
             </Header>
             <FlatList
                 data={(type === 'primary') ? Categories : months}
@@ -46,7 +46,7 @@ export function CategorySelect({
                 keyExtractor={(item) => item.key}
                 renderItem={({ item }) => (
                     <Category
-                        onPress={() => handleCategorySeletc(item)}
+                        onPress={() => handleCategorySelect(item)}
                         isActive={category.key === item.key}
                     >
                         <Name>{item.name}</Name>

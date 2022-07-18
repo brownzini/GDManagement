@@ -117,6 +117,7 @@ export default function Statistics (){
       translucent 
       backgroundColor='transparent' 
     />
+
     <Header>
       <HeaderContainer> 
         <ButtonBack onPress={() => navigation.goBack()}>
@@ -129,8 +130,8 @@ export default function Statistics (){
         <HeaderTitle> Statistics </HeaderTitle>
       </HeaderContainer>
     </Header>
-    <GraphicContainer>
 
+    <GraphicContainer>
       <GraphicContent visible={(data[0].label !== "null")}>
         <Circle>
           <VictoryPie 

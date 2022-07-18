@@ -4,8 +4,10 @@ import {
   Container, 
 } from './styles';
 
-export default function Logout (){
+export default function CardDocs (){
  return (
-   <Container></Container>
+   <Container>
+    
+   </Container>
  )
 }

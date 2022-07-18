@@ -28,10 +28,8 @@ export interface DataListProps extends ProductsCardProps {
 }
 
 export default function ListProducts (){
- 
  const navigation = useNavigation<any>();
  const { products } = useProduct();
-
  return (
    <Container>
     <Header>
@@ -47,9 +45,7 @@ export default function ListProducts (){
       </HeaderTitle>
       <CardHeader style={[styles.card, styles.elevation]}>
         <ContentArea>
-          <ContentAreaTitle>
-            Register your product
-          </ContentAreaTitle>
+          <ContentAreaTitle> Register your product </ContentAreaTitle>
           <WrapperButton>
             <Button
               title="Create"

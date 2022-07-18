@@ -7,41 +7,6 @@ import workplace_safety from '../assets/workplace_safety.png';
 import surveillance from '../assets/surveillance.png';
 import vehicle from '../assets/vehicle.png';
 
-export const DATA = [
-    {
-      id: 'Hamburger',
-      img: food,
-    },
-    {
-      id: 'Home Appliance',
-      img: home_appliance,
-    },
-    {
-      id: 'Electronics',
-      img: electronics,
-    },
-    {
-      id: 'Derivative',
-      img: derivative,
-    },
-    {
-      id: 'Materials',
-      img: materials,
-    },
-    {
-      id: 'Workplace Safety',
-      img: workplace_safety,
-    },
-    {
-      id: 'Surveillance',
-      img: surveillance,
-    },
-    {
-      id: 'Vehicle',
-      img: vehicle,
-    },
-];
-
 export function GetIconsCategory (param:string) {
     switch (param) {
         case 'Home Appliance': return home_appliance;

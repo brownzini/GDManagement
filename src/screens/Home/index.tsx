@@ -114,8 +114,7 @@ export default function Home (){
      <ReviewTitle> Speed dial</ReviewTitle>
 
      <ReviewContent>
-        <ReviewBody>
-          
+        <ReviewBody>     
         {isEnabledTotal && (
           <ReviewFirst>
             <ReviewWrapper>
@@ -145,7 +144,6 @@ export default function Home (){
            </ButtonContent2>
           </ReviewSecond>)}
           
-  
           <ReviewThird
             firstActive={isEnabledTotal}
             secondActive={isEnabledStatistics}
