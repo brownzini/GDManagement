@@ -1,10 +1,8 @@
+//React and React native
 import React from "react";
-import { 
-  KeyboardAvoidingView, 
-  Platform,  
-}
- from "react-native";
+import { KeyboardAvoidingView, Platform, } from "react-native";
 
+//Contexts
 import { useNavigation } from '@react-navigation/native';
 
 import { 
