@@ -1,7 +1,11 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+//React and React Native
 import React, { useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
+//Components
 import { LoadAnimation } from '../../components/LoadAnimation';
+
+//Contexts
 import { useAuth } from '../../hooks/auth';
 import { useProduct } from '../../hooks/product';
 
