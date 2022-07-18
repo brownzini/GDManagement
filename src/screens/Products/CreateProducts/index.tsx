@@ -1,14 +1,18 @@
-import { useNavigation } from '@react-navigation/native';
+//React and React native
 import React, { useState } from 'react';
 import { StyleSheet, Modal } from 'react-native';
+
+//Contexts
+import { useNavigation } from '@react-navigation/native';
+
+//Components
 import BackButton from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
-
 import { Input } from '../../../components/Input';
 import { CategorySelect } from '../CategorySelect';
 
+//Off Components
 import uuid from 'react-native-uuid';
-
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { 
