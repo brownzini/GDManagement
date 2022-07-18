@@ -18,7 +18,7 @@ yarn install -> expo install
 ```
 Open with expo
 
-##Functionalities
+## Functionalities
 >CRUD of products<br />
 >Listing topics<br />
 >Controll topics<br />
