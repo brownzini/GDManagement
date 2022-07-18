@@ -1,10 +1,14 @@
+//React and React native
 import React from "react";
 import { KeyboardAvoidingView, Platform } from "react-native";
 
+//Images
 import principal from '../../assets/teamwork.png';
 
+//Components
 import { Button } from "../../components/Button";
 
+//Contexts
 import { useNavigation } from '@react-navigation/native'
 
 import { 
@@ -27,9 +31,7 @@ export function SignIn() {
     <Container>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <Content>
-          <Header> 
-            
-          </Header>
+          <Header></Header>
           <Title> Your app to control your products </Title>
           <Brand source={principal} />
           <SubTitle>Get Started</SubTitle>
