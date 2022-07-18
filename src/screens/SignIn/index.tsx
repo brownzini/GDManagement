@@ -28,8 +28,9 @@ export function SignIn() {
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <Content>
           <Header> 
-            <Title> Your app to control your products </Title>
+            
           </Header>
+          <Title> Your app to control your products </Title>
           <Brand source={principal} />
           <SubTitle>Get Started</SubTitle>
           <Button

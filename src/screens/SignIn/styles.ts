@@ -10,14 +10,10 @@ export const Container = styled(LinearGradient).attrs(({ theme }) => ({
   justify-content: center;
 `;
 
-export const Content = styled.ScrollView.attrs({
-  showsVerticalScrollIndicator: false,
-  contentContainerStyle: {
-    paddingBottom: 48
-  },
-})`
+export const Content = styled.View`
   width: 100%;
   padding: 0 32px;
+  justify-content: center;
 `;
 
 export const Title = styled.Text`
@@ -42,7 +38,7 @@ export const Header = styled.View`
    flex-direction:row;
    justify-content:center;
    align-items:center;
-   margin-top:35%;
+   margin-top:25%;
 `;
 
 export const SubTitle = styled.Text`
