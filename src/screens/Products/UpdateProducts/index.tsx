@@ -1,12 +1,14 @@
+//React and React Native
 import React, { useState } from "react";
 import { StyleSheet, Modal } from "react-native";
+import { Alert, KeyboardAvoidingView, Platform } from "react-native";
+
+//Components
 import BackButton from "../../../components/BackButton";
 import { Button } from "../../../components/Button";
-
 import { Input } from "../../../components/Input";
 import { CategorySelect } from "../CategorySelect";
 
-import { Alert, KeyboardAvoidingView, Platform } from "react-native";
 
 import {
   ButtonSelect,
