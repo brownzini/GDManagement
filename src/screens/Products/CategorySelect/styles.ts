@@ -11,7 +11,7 @@ interface CategoryProps {
 
 export const Container = styled(GestureHandlerRootView)`
     flex: 1;
-    background-color: ${({ theme }) => theme.COLORS_SELECT.backgound};
+    background-color: ${({ theme }) => theme.COLORS_SELECT.background};
 `;
 
 export const Header = styled(LinearGradient).attrs(({ theme }) => ({
