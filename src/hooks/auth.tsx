@@ -47,7 +47,7 @@ function AuthProvider({ children }: AuthProviderProps) {
            isEnabledProducts, setIsEnabledProducts,
          }}
       >
-         {children}
+        {children}
       </AuthContext.Provider>
     )
 }
