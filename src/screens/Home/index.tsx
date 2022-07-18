@@ -41,6 +41,7 @@ import {
   LastProductsContent,
   LastProductsBody,
   LastProductsBodyContent,
+  ErrorMessage,
 } from './styles';
 
 import { GetIconsCategory } from '../../utils/Categories';
@@ -107,6 +108,7 @@ export default function Home (){
             horizontal={true}
             showsHorizontalScrollIndicator={false}
           />
+          {(products.length <= 0) && <ErrorMessage> There are no registered products. </ErrorMessage>}
          </LastProductsBodyContent>
         </LastProductsBody>  
      </LastProductsContent>
@@ -120,10 +122,10 @@ export default function Home (){
             <ReviewWrapper>
               <ReviewMoneyTitle> Total </ReviewMoneyTitle>
               <ReviewMoney> 
-                  $ { totalValueResult.toFixed(2) } 
+                  {new Intl.NumberFormat('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}).format(totalValueResult)}
               </ReviewMoney>
             </ReviewWrapper>
-          </ReviewFirst>   )}
+          </ReviewFirst>  )}
           
           {isEnabledStatistics && (
           <ReviewSecond 

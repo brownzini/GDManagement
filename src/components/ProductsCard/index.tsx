@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect }  from "react";
 
 import {
     Container,
@@ -33,7 +33,6 @@ interface Props {
 }
 
 export function ProductsCard({ data }: Props) {
-    
     const navigation = useNavigation<any>();
     const { deleteProduct } = useProduct();
 
@@ -57,11 +56,13 @@ export function ProductsCard({ data }: Props) {
           </Actions>
         </ContentHeader>
         <Content>
-          <PriceContainer> $ {data.price} </PriceContainer>
+          <PriceContainer> 
+            {new Intl.NumberFormat('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}).format(data.price)} 
+          </PriceContainer>
           <Image source={GetIconsCategory(data.category)} />
         </Content>
         <DateContainer>
-          <Date> Created At - {data.date} </Date>
+          <Date> Created At - {data.date.toString()} </Date>
         </DateContainer>
       </Container>
     )

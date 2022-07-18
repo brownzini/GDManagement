@@ -14,6 +14,9 @@ import { AppProvider } from './src/hooks';
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
+
 export default function App() {
 
   const [fontsLoaded] = useFonts({

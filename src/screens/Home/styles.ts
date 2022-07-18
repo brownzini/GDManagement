@@ -155,7 +155,8 @@ export const ReviewWrapper = styled.View`
 `;
 
 export const ReviewMoney = styled.Text`
-    font-size: ${RFValue(24)}px;
+    padding: 0 12px;
+    font-size: ${RFValue(20)}px;
     font-family: ${({ theme }) => theme.FONTS.TEXT};
     color: ${({ theme }) => theme.COLORS.PRIMARY_50};
     text-align: center;
@@ -276,4 +277,9 @@ export const Brand = styled.Image.attrs({
     resizeMode: 'contain'
   })`
     margin-top: 0px;
+`;
+
+export const ErrorMessage = styled.Text`
+    font-size: ${RFValue(20)}px;
+    color: ${({ theme }) => theme.COLORS.SHAPE};   
 `;
