@@ -15,5 +15,11 @@ Development project for STUDIES and PORTFÓLIO only.
 Run the server
 ```bash
 yarn install -> expo install
-
 ```
+Open with expo
+
+##Functionalities
+>CRUD of products<br />
+>Listing topics<br />
+>Controll topics<br />
+
