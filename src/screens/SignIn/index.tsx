@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { KeyboardAvoidingView, Platform } from "react-native";
 
-import principal from '../../assets/principal.png';
+import principal from '../../assets/planning.png';
 
 import { Button } from "../../components/Button";
 
@@ -11,7 +11,9 @@ import {
     Container, 
     Content, 
     Title, 
-    Brand, 
+    Brand,
+    Header,
+    SubTitle, 
 } from "./styles";
 
 export function SignIn() {
@@ -25,8 +27,11 @@ export function SignIn() {
     <Container>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <Content>
+          <Header> 
+            <Title> Your app to control your products </Title>
+          </Header>
           <Brand source={principal} />
-          <Title>Get Started</Title>
+          <SubTitle>Get Started</SubTitle>
           <Button
             title="Go"
             type="primary"
