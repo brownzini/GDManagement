@@ -10,3 +10,10 @@ Development project for STUDIES and PORTFÓLIO only.
 - Async Storage
 - Styled Components
 - TypeScript
+
+## 🚀 Install and Starting
+Run the server
+```bash
+yarn install -> expo install
+
+```
