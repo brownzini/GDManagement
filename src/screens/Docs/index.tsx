@@ -1,9 +1,17 @@
+//React and React native
 import React from 'react';
 import { FlatList } from 'react-native';
+
+//Off Components
 import { getBottomSpace } from 'react-native-iphone-x-helper';
 
+//Images
 import Books from '../../assets/books.png';
+
+//Components
 import CardDoc from '../../components/CardDoc';
+
+//Utils
 import DocsContent from '../../utils/DocsContent';
 
 import { 
