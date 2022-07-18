@@ -1,6 +1,11 @@
+//React and React native
 import React from "react";
 import { FlatList } from "react-native";
+
+//Components
 import { Button } from "../../../components/Button";
+
+//Utils
 import { Categories } from "../../../utils/Data";
 import months from '../../../utils/months';
 
