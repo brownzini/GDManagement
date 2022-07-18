@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { KeyboardAvoidingView, Platform } from "react-native";
 
-import principal from '../../assets/planning.png';
+import principal from '../../assets/teamwork.png';
 
 import { Button } from "../../components/Button";
 
