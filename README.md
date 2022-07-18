@@ -5,6 +5,8 @@ Development project for STUDIES and PORTFÓLIO only.
 
 ![ImagemSistema](Screenshot_20220718-153045.png)
 
+## 📝Draft
+![ImagemSistema](print.png)
 ## 💡Technologies
 - React Native
 - Async Storage
