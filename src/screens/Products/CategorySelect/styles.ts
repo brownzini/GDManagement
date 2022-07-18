@@ -39,7 +39,7 @@ export const Category = styled.TouchableOpacity<CategoryProps>`
     flex-direction: row;
     align-items: center;
     background-color: ${({ theme, isActive }) => 
-        isActive ? theme.COLORS_SELECT.secondary_light : theme.COLORS_SELECT.backgound
+        isActive ? theme.COLORS_SELECT.secondary_light : theme.COLORS_SELECT.background
     };
 `;
 
