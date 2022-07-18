@@ -1,10 +1,6 @@
 //React and React native
 import React, { useEffect, useState } from 'react';
-
-import { 
-  FlatList, 
-  StyleSheet,
-} from 'react-native';
+import { FlatList, StyleSheet, } from 'react-native';
 
 import { 
   Container, 

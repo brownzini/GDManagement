@@ -1,4 +1,7 @@
+//React and React Native
 import React, { useEffect } from 'react';
+
+//Contexts
 import { useAuth } from '../../hooks/auth';
 
 import { 
