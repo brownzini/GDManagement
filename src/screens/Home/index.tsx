@@ -1,3 +1,4 @@
+//React and React native
 import React, { useEffect, useState } from 'react';
 
 import { 
@@ -44,7 +45,10 @@ import {
   ErrorMessage,
 } from './styles';
 
+//Utils
 import { GetIconsCategory } from '../../utils/Categories';
+
+//Contexts
 import { useNavigation } from '@react-navigation/native';
 import { useProduct } from '../../hooks/product';
 import { useAuth } from '../../hooks/auth';
