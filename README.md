@@ -18,7 +18,7 @@ Run the server
 ```bash
 yarn install -> expo install
 ```
-Open with expo
+Open with expo start
 
 ## Functionalities
 >CRUD of products<br />
